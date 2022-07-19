@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/questionCompleteTheSentence"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:text="What is meaning of life, the universe and everything?"
+        android:layout_height="55dp" />
+
+    <EditText
+        android:id="@+id/editTextAnswerCompleteQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:ems="10"
+        android:text="22+22" />
+</LinearLayout>
