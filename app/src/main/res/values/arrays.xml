@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="question1">
-        <string name="questionType"></string>
-        <string name="question"></string>
-        <string name="answer"></string>
+    <array name="lessons">
+        <array name="lessonName">
+            <array name="q1">
+                <string name="questionType"></string>
+                <string name="question"></string>
+                <string name="answer"></string>
+            </array>
+        </array>
     </array>
 </resources>
