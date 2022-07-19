@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="question1">
+        <string name="questionType"></string>
+        <string name="question"></string>
+        <string name="answer"></string>
+    </string>
+
+</resources>
