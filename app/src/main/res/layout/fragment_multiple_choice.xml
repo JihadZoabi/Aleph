@@ -1,59 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:gravity="center"
+    >
 
     <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="What is the answer for life, the universe and everything?"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/question"/>
+
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Love"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice1"/>
 
     <Button
-        android:id="@+id/answer1"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:text="Answer1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Happiness"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice2"/>
 
     <Button
-        android:id="@+id/answer2"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:text="Answer2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer1" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="42"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice3"/>
 
     <Button
-        android:id="@+id/answer3"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:text="Answer3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer2" />
-
-    <Button
-        android:id="@+id/answer4"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="45dp"
-        android:text="Answer4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer3" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suffering"
+        android:background="#B71C1C"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice4"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
