@@ -21,4 +21,5 @@ public class LessonActivity extends AppCompatActivity {
         String[] arr = getResources().getStringArray(R.array.question1);
 
     }
+
 }
