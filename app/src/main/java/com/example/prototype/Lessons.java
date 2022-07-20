@@ -26,8 +26,8 @@ public class Lessons {
     }
     private Lessons() {}
     public static void init(Resources res) {
-        r = res;
-        TypedArray table = r.obtainTypedArray(R.array.lessons);
+        TypedArray table = res.obtainTypedArray(R.array.lessons);
+        r = table.getResources();
         for (int i = 0; i < table.length(); ++i) {
             TypedArray lesson = getArr(table, i);
             Question[] qs = new Question[lesson.length() - 1];
