@@ -25,11 +25,13 @@ public class Lessons {
                         qs[j] = new CompleteSentence(data);
                         break;
                     case "MultipleChoice":
+                        qs[j] = new MultipleChoice(data);
                         break;
                     default:
                         continue;
                 }
             }
+            lessons.put(name, new Lesson(name, qs));
         }
     }
     public Lesson getLesson(String name) {
