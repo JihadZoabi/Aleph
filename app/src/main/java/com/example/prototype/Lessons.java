@@ -7,7 +7,13 @@ import android.util.Log;
 
 public class Lessons {
     private final HashMap<String, Lesson> lessons;
-    private Lessons(Resources r) {
+    private TypedArray find(TypedArray arr, int index) {
+        int id = arr.getResourceId(index, -1);
+        if (id < 0)
+            throw new BadXML("f")
+    }
+    private Lessons(Resources res) {
+        r = res;
         lessons = new HashMap<>();
         TypedArray table = r.obtainTypedArray(R.array.lessons);
         for (int i = 0; i < table.length(); ++i) {
@@ -38,14 +44,15 @@ public class Lessons {
     public Lesson getLesson(String name) {
         return lessons.get(name);
     }
-    private static Lessons l = null;
     static void init(Resources res) {
         l = new Lessons(res);
     }
     static Lesson get(String name) {
-        return get().getLesson(name);
+        return l.getLesson(name);
     }
     static Lessons get() {
         return l;
     }
+    private Resources r;
+    private static Lessons l = null;
 }

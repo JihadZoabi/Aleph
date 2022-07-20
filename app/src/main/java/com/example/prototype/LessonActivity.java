@@ -42,14 +42,6 @@ public class LessonActivity extends AppCompatActivity {
                         public void on(CompleteSentence c) {
                         }
                     });
-                    switch(l.getQ(i[0])){
-                        case 0:
-                            showFragment(new MultipleChoiceFragment());
-                            break;
-                        case 1:
-                            showFragment(new CompleteSentenceFragment());
-                            break;
-                    }
                 }
             }
         });
