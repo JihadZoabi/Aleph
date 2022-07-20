@@ -1,6 +1,8 @@
 package com.example.prototype;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +30,7 @@ public class LessonActivity extends AppCompatActivity {
         continueBtn = findViewById(R.id.continueBtn);
 
         //This is just for testing purposes
-        questionArray = new int[]{0,0,0};
+        questionArray = new int[]{0,1,0,1,0};
 
         /*lessonLength = getIntent().getExtras().getInt("length");
         lessonArr = new int[lessonLength];*/
@@ -38,29 +40,28 @@ public class LessonActivity extends AppCompatActivity {
 
     public void buildLesson(){
         final int[] i = {0};
-        final boolean[] flag = {true};
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 i[0]++;
-                flag[0] = true;
-            }
-        });
-        while(i[0] < questionArray.length){
-            //Check which fragment is supposed to load
-            if(flag[0]){
-                switch(0){
-                    case 0:
-                        MultipleChoiceFragment f = new MultipleChoiceFragment();
-                        getSupportFragmentManager().beginTransaction().add(R.id.questionContainer, f).commit();
-                        break;
+                if(i[0] < questionArray.length){
+                    switch(questionArray[i[0]]){
+                        case 0:
+                            showFragment(new MultipleChoiceFragment());
+                            break;
+                        case 1:
+                            showFragment(new CompleteSentenceFragment());
+                            break;
+                    }
                 }
             }
-            flag[0] = false;
-        }
-        startActivity(new Intent(LessonActivity.this, MainActivity.class));
+        });
+    }
 
+    public void showFragment(Fragment fragment) {
+        FragmentTransaction mTransactiont = getSupportFragmentManager().beginTransaction();
 
-
+        mTransactiont.replace(R.id.questionContainer, fragment, fragment.getClass().getName());
+        mTransactiont.commit();
     }
 }
