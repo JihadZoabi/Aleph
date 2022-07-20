@@ -37,9 +37,10 @@ public class LessonActivity extends AppCompatActivity {
                 if(i[0] < l.count()){
                     l.getQ(i[0]).use(new Visitor() {
                         public void on(MultipleChoice m) {
-
+                            showFragment(new MultipleChoiceFragment(m));
                         }
                         public void on(CompleteSentence c) {
+                            showFragment(new CompleteSentenceFragment(c));
                         }
                     });
                 }

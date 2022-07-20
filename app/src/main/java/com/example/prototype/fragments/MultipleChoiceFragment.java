@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
 
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener {
@@ -19,6 +20,12 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button mButtonChoice3;
     private Button mButtonChoice4;
     private String mAnswer;
+
+    MultipleChoice m;
+
+    public MultipleChoiceFragment(MultipleChoice m){
+        this.m = m;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,10 +50,22 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     }
 
     private void updateQuestion() {
-//        mQuestionView.setText();
-//        mButtonChoice1.setText();
-//        mButtonChoice2.setText();
-//        mButtonChoice3.setText();
+        mQuestionView.setText(m.getQuestion());
+
+        mButtonChoice1.setText(m.getAnswers()[0]);
+        mButtonChoice2.setText(m.getAnswers()[1]);
+        switch(m.count()){
+            case 2:
+                mButtonChoice3.setVisibility(View.INVISIBLE);
+                mButtonChoice4.setVisibility(View.INVISIBLE);
+            case 3:
+                mButtonChoice3.setText(m.getAnswers()[2]);
+                mButtonChoice4.setVisibility(View.INVISIBLE);
+            case 4:
+                mButtonChoice3.setText(m.getAnswers()[2]);
+                mButtonChoice4.setText(m.getAnswers()[3]);
+        }
+
     }
 
     @Override
