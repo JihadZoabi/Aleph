@@ -19,13 +19,7 @@ public class LessonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
-
-        //init
         continueBtn = findViewById(R.id.continueBtn);
-
-        /*lessonLength = getIntent().getExtras().getInt("length");
-        lessonArr = new int[lessonLength];*/
-
         buildLesson(Lessons.get("lessonName"));
     }
     public void buildLesson(Lesson l){
@@ -47,10 +41,8 @@ public class LessonActivity extends AppCompatActivity {
             }
         });
     }
-
     public void showFragment(Fragment fragment) {
         FragmentTransaction mTransaction = getSupportFragmentManager().beginTransaction();
-
         mTransaction.replace(R.id.questionContainer, fragment, fragment.getClass().getName());
         mTransaction.commit();
     }
