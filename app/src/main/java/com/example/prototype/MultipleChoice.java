@@ -9,6 +9,8 @@ public class MultipleChoice implements Question {
         this.correct = correct;
     }
     public MultipleChoice(String[] data) {
+        if (data.length != 3)
+            throw new BadXML();
         this.question = data[0];
         this.correct = Integer.parseInt(data[1]);
         this.answers = Arrays.copyOfRange(data, 2, data.length);

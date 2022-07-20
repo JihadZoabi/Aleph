@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import com.example.prototype.R;
 
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener {
-
     private TextView mQuestionView;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
@@ -24,7 +23,6 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
