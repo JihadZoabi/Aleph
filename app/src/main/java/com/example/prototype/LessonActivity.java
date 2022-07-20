@@ -50,9 +50,9 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     public void showFragment(Fragment fragment) {
-        FragmentTransaction mTransactiont = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction mTransaction = getSupportFragmentManager().beginTransaction();
 
-        mTransactiont.replace(R.id.questionContainer, fragment, fragment.getClass().getName());
-        mTransactiont.commit();
+        mTransaction.replace(R.id.questionContainer, fragment, fragment.getClass().getName());
+        mTransaction.commit();
     }
 }
