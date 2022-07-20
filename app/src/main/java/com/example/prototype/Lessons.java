@@ -20,12 +20,13 @@ public class Lessons {
         return arr.getString(index);
     }
     public static Lesson get(String s) {
+        if (r == null)
+            throw new BadXML();
         return lessons.get(s);
     }
     private Lessons() {}
-    public static void init() {
-        if (r == null)
-            throw new BadXML();
+    public static void init(Resources res) {
+        r = res;
         TypedArray table = r.obtainTypedArray(R.array.lessons);
         for (int i = 0; i < table.length(); ++i) {
             TypedArray lesson = getArr(table, i);
@@ -50,9 +51,6 @@ public class Lessons {
             }
             lessons.put(name, new Lesson(name, qs));
         }
-    }
-    static void init(Resources res) {
-        r = res;
     }
     private static Resources r;
 }
