@@ -18,7 +18,6 @@ public class LessonActivity extends AppCompatActivity {
         lessonLength = getIntent().getExtras().getInt("length");
         lessonArr = new int[lessonLength];
 
-        String[] arr = getResources().getStringArray(R.array.question1);
 
     }
 
