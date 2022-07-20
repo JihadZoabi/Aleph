@@ -13,6 +13,9 @@ public class MultipleChoice implements Question {
         this.correct = Integer.parseInt(data[1]);
         this.answers = Arrays.copyOfRange(data, 2, data.length);
     }
+    public String toString() {
+        return "MultipleChoice: " + question;
+    }
     public String getQuestion() {
         return question;
     }
