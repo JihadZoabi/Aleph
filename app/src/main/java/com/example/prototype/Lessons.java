@@ -45,7 +45,7 @@ public class Lessons {
                         qs[j - 1] = new MultipleChoice(data);
                         break;
                     default:
-                        break;
+                        throw new BadXML();
                 }
             }
             lessons.put(name, new Lesson(name, qs));
