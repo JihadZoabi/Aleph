@@ -9,12 +9,19 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.CompleteSentence;
 import com.example.prototype.R;
 
 public class CompleteSentenceFragment extends Fragment {
 
     TextView questionText;
     EditText completeAnswer;
+
+    private CompleteSentence c;
+
+    public CompleteSentenceFragment(CompleteSentence c){
+        this.c = c;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
