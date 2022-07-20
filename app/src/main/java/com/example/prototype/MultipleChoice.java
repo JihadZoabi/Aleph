@@ -13,8 +13,18 @@ public class MultipleChoice implements Question {
         this.correct = Integer.parseInt(data[1]);
         this.answers = Arrays.copyOfRange(data, 2, data.length);
     }
+    protected String stringer() {
+        String str = question + " The correct answer is " + correct +
+                ".\nThe answers are:";
+        for (int i = 0; i < answers.length; ++i)
+            str += "\n" + answers[i];
+        return str;
+    }
     public String toString() {
-        return "MultipleChoice: " + question;
+        return "MultipleChoice: " + stringer();
+    }
+    public int count() {
+        return answers.length;
     }
     public String getQuestion() {
         return question;

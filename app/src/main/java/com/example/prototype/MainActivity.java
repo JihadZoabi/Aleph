@@ -24,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-        Lessons.init(getResources());
-        Log.d("Bar's shitty code", Lessons.get("lessonName").toString());
-        */
 
+        Lessons.init(getResources());
+        Lesson l = Lessons.get("lessonName");
+        for (int i = 0; i < l.count(); ++i) {
+            Log.d("Bar", l.toString());
+        }
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
-
     private void replaceFragment (Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
