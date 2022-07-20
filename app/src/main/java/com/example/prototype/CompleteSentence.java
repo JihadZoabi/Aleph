@@ -5,7 +5,7 @@ public class CompleteSentence extends MultipleChoice implements Question {
         super(question, answers, correct);
     }
     public String toString() {
-        return "CompleteSentence: " + super.toString();
+        return "CompleteSentence: " + stringer();
     }
     public CompleteSentence(String[] data) {
         super(data);

@@ -44,12 +44,14 @@ public class LessonActivity extends AppCompatActivity {
             public void onClick(View view) {
                 i[0]++;
                 flag[0] = true;
+                if (i[0] >= questionArray.length) {
+                }
             }
         });
-        while(i[0] < questionArray.length){
+        while (i[0] < questionArray.length){
             //Check which fragment is supposed to load
-            if(flag[0]){
-                switch(0){
+            if (flag[0]) {
+                switch (0) {
                     case 0:
                         MultipleChoiceFragment f = new MultipleChoiceFragment();
                         getSupportFragmentManager().beginTransaction().add(R.id.questionContainer, f).commit();
@@ -59,8 +61,5 @@ public class LessonActivity extends AppCompatActivity {
             flag[0] = false;
         }
         startActivity(new Intent(LessonActivity.this, MainActivity.class));
-
-
-
     }
 }
