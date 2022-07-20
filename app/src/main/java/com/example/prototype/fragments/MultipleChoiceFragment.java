@@ -66,3 +66,4 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         }
     }
 }
+

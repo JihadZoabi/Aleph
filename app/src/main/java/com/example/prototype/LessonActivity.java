@@ -14,13 +14,7 @@ import com.example.prototype.fragments.CompleteSentenceFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
-
-
-    private int[] questionArray;
-    private int lessonLength = 3;
-
     Button continueBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,23 +23,26 @@ public class LessonActivity extends AppCompatActivity {
         //init
         continueBtn = findViewById(R.id.continueBtn);
 
-        //This is just for testing purposes
-        questionArray = new int[]{0,1,0,1,0};
-
         /*lessonLength = getIntent().getExtras().getInt("length");
         lessonArr = new int[lessonLength];*/
 
-        buildLesson();
+        buildLesson(Lessons.get("lessonName"));
     }
-
-    public void buildLesson(){
+    public void buildLesson(Lesson l){
         final int[] i = {0};
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 i[0]++;
-                if(i[0] < questionArray.length){
-                    switch(questionArray[i[0]]){
+                if(i[0] < l.count()){
+                    l.getQ(i[0]).use(new Visitor() {
+                        public void on(MultipleChoice m) {
+
+                        }
+                        public void on(CompleteSentence c) {
+                        }
+                    });
+                    switch(l.getQ(i[0])){
                         case 0:
                             showFragment(new MultipleChoiceFragment());
                             break;
