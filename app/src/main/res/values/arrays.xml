@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="lessons">
-
+        <item>@array/l1</item>
+    </array>
+    <array name="l1">
+        <item>lessonName</item>
+        <item>@array/q1</item>
+    </array>
+    <array name="q1">
+        <item>MultipleChoice</item>
+        <item>Who?</item>
+        <item>0</item>
+        <item>Eyal</item>
     </array>
 </resources>

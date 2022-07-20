@@ -5,11 +5,10 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 
 public class Lessons {
-    private HashMap<String, Lesson> lessons;
+    private final HashMap<String, Lesson> lessons;
     private Lessons(Resources r) {
         lessons = new HashMap<>();
         TypedArray table = r.obtainTypedArray(R.array.lessons);
-        Lesson[] ls = new Lesson[table.length()];
         for (int i = 0; i < table.length(); ++i) {
             TypedArray lesson = r.obtainTypedArray(table.getResourceId(i, -1));
             Question[] qs = new Question[lesson.length() - 1];
@@ -28,7 +27,7 @@ public class Lessons {
                         qs[j] = new MultipleChoice(data);
                         break;
                     default:
-                        continue;
+                        break;
                 }
             }
             lessons.put(name, new Lesson(name, qs));
