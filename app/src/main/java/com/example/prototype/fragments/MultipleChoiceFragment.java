@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.BadXML;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
 
@@ -55,15 +56,20 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         mButtonChoice1.setText(m.getAnswers()[0]);
         mButtonChoice2.setText(m.getAnswers()[1]);
         switch(m.count()){
+            default:
+                throw new BadXML();
             case 2:
                 mButtonChoice3.setVisibility(View.INVISIBLE);
                 mButtonChoice4.setVisibility(View.INVISIBLE);
+                break;
             case 3:
                 mButtonChoice3.setText(m.getAnswers()[2]);
                 mButtonChoice4.setVisibility(View.INVISIBLE);
+                break;
             case 4:
                 mButtonChoice3.setText(m.getAnswers()[2]);
                 mButtonChoice4.setText(m.getAnswers()[3]);
+                break;
         }
 
     }

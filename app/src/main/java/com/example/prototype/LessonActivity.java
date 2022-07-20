@@ -34,8 +34,7 @@ public class LessonActivity extends AppCompatActivity {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i[0]++;
-                if(i[0] < l.count()){
+                if (i[0] < l.count()){
                     l.getQ(i[0]).use(new Visitor() {
                         public void on(MultipleChoice m) {
                             showFragment(new MultipleChoiceFragment(m));
@@ -45,6 +44,7 @@ public class LessonActivity extends AppCompatActivity {
                         }
                     });
                 }
+                i[0]++;
             }
         });
     }
