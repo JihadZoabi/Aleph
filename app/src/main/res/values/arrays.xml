@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="lessons">
-        <array name="l1">
-            <string name="name">lessonName</string>
-            <array name="q1">
-                <string name="questionType">MultipleChoice</string>
-                <string name="question">Who?</string>
-                <string name="correct">0</string>
-                <string name="answer">Eyal</string>
-            </array>
-        </array>
+
     </array>
 </resources>

@@ -27,5 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white" />
+        android:background="@color/white"
+        android:padding="5dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="next"
+            android:id="@+id/continueBtn"/>
+    </RelativeLayout>
 </RelativeLayout>
