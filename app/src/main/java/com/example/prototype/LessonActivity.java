@@ -30,6 +30,7 @@ public class LessonActivity extends AppCompatActivity {
     }
     public void buildLesson(Lesson l){
         final int[] i = {0};
+        Log.d("I mean Bar is", String.valueOf(l == null));
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
