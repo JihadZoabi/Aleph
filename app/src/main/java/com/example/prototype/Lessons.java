@@ -8,16 +8,27 @@ public class Lessons {
     private HashMap<String, Lesson> lessons;
     private Lessons(Resources r) {
         lessons = new HashMap<>();
-        TypedArray ls = r.obtainTypedArray(R.array.lessons);
-        for (int i = 0; i < ls.length(); ++i) {
-            TypedArray lesson = r.obtainTypedArray(ls.getResourceId(i, -1));
-            switch (lesson.getString(0)) {
-                case "CompleteSentence":
-                    break;
-                case "MultipleChoice":
-                    break;
-                default:
-                    continue;
+        TypedArray table = r.obtainTypedArray(R.array.lessons);
+        Lesson[] ls = new Lesson[table.length()];
+        for (int i = 0; i < table.length(); ++i) {
+            TypedArray lesson = r.obtainTypedArray(table.getResourceId(i, -1));
+            Question[] qs = new Question[lesson.length() - 1];
+            String name = lesson.getString(0);
+            for (int j = 0; j < lesson.length(); ++j) {
+                TypedArray q = r.obtainTypedArray(lesson.getResourceId(j, -1));
+                String[] data = new String[q.length() - 1];
+                for (int k = 1; k < q.length(); ++k)
+                    data[k] = q.getString(k);
+                String type = q.getString(0);
+                switch (type) {
+                    case "CompleteSentence":
+                        qs[j] = new CompleteSentence(data);
+                        break;
+                    case "MultipleChoice":
+                        break;
+                    default:
+                        continue;
+                }
             }
         }
     }

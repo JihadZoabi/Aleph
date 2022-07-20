@@ -1,18 +1,12 @@
 package com.example.prototype;
 
-public class CompleteSentence implements Question {
-    public String getSentence() {
-        return sentence;
+public class CompleteSentence extends MultipleChoice implements Question {
+    public CompleteSentence(String question, String[] answers, int correct) {
+        super(question, answers, correct);
     }
-    public String getCompletion() {
-        return completion;
+    public CompleteSentence(String[] data) {
+        super(data);
     }
-    public CompleteSentence(String sentence, String completion) {
-        this.sentence = sentence;
-        this.completion = completion;
-    }
-    private String sentence;
-    private String completion;
     public void use(Visitor v) {
         v.on(this);
     }

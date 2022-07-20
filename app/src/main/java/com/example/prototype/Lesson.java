@@ -13,6 +13,10 @@ public class Lesson {
     Question getQ(int index) {
         return qs[index];
     }
+    public Lesson(String name, Question[] qs) {
+        this.qs = qs;
+        this.name = name;
+    }
     public Lesson(String name, int difficulty, Question[] qs) {
         this.qs = qs;
         this.name = name;
