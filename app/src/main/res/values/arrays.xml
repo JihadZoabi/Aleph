@@ -8,8 +8,6 @@
                 <string name="question"></string>
                 <string name="answer"></string>
             </array>
-            <array name="q2">
-            </array>
         </array>
     </array>
 </resources>
