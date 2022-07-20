@@ -3,6 +3,7 @@ package com.example.prototype;
 import java.util.HashMap;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.util.Log;
 
 public class Lessons {
     private final HashMap<String, Lesson> lessons;
@@ -13,6 +14,7 @@ public class Lessons {
             TypedArray lesson = r.obtainTypedArray(table.getResourceId(i, -1));
             Question[] qs = new Question[lesson.length() - 1];
             String name = lesson.getString(0);
+            Log.d("Bar", name);
             for (int j = 1; j < lesson.length(); ++j) {
                 TypedArray q = r.obtainTypedArray(lesson.getResourceId(j, -1));
                 String[] data = new String[q.length() - 1];

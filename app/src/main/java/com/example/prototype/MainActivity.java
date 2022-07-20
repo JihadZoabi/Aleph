@@ -28,14 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Lessons.init(getResources());
         Lesson l = Lessons.get("lessonName");
         for (int i = 0; i < l.count(); ++i) {
-            l.getQ(i).use(new Visitor() {
-                public void on(MultipleChoice c) {
-                    Log.d("Yay", "Multiple yays");
-                }
-                public void on(CompleteSentence c) {
-                    Log.d("Yay", "Complete yays");
-                }
-            });
+            Log.d("Bar", l.toString());
         }
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
