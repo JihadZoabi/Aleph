@@ -6,27 +6,37 @@ import android.content.res.TypedArray;
 import android.util.Log;
 
 public class Lessons {
-    private final HashMap<String, Lesson> lessons;
-    private TypedArray find(TypedArray arr, int index) {
+    // Used to be a singleton, maybe should be one for testing
+    private static final HashMap<String, Lesson> lessons = new HashMap<>();
+    private static TypedArray getArr(TypedArray arr, int index) {
         int id = arr.getResourceId(index, -1);
         if (id < 0)
-            throw new BadXML("f")
+            throw new BadXML();
+        return r.obtainTypedArray(id);
     }
-    private Lessons(Resources res) {
-        r = res;
-        lessons = new HashMap<>();
+    private static String getString(TypedArray arr, int index) {
+        if (index < 0 || index >= arr.length())
+            throw new BadXML();
+        return arr.getString(index);
+    }
+    public static Lesson get(String s) {
+        return lessons.get(s);
+    }
+    private Lessons() {}
+    public static void init() {
+        if (r == null)
+            throw new BadXML();
         TypedArray table = r.obtainTypedArray(R.array.lessons);
         for (int i = 0; i < table.length(); ++i) {
-            TypedArray lesson = r.obtainTypedArray(table.getResourceId(i, -1));
+            TypedArray lesson = getArr(table, i);
             Question[] qs = new Question[lesson.length() - 1];
-            String name = lesson.getString(0);
-            Log.d("Bar", name);
+            String name = getString(lesson, 0);
             for (int j = 1; j < lesson.length(); ++j) {
-                TypedArray q = r.obtainTypedArray(lesson.getResourceId(j, -1));
+                TypedArray q = getArr(lesson, i);
                 String[] data = new String[q.length() - 1];
                 for (int k = 1; k < q.length(); ++k)
                     data[k - 1] = q.getString(k);
-                String type = q.getString(0);
+                String type = getString(q, 0);
                 switch (type) {
                     case "CompleteSentence":
                         qs[j - 1] = new CompleteSentence(data);
@@ -41,18 +51,8 @@ public class Lessons {
             lessons.put(name, new Lesson(name, qs));
         }
     }
-    public Lesson getLesson(String name) {
-        return lessons.get(name);
-    }
     static void init(Resources res) {
-        l = new Lessons(res);
+        r = res;
     }
-    static Lesson get(String name) {
-        return l.getLesson(name);
-    }
-    static Lessons get() {
-        return l;
-    }
-    private Resources r;
-    private static Lessons l = null;
+    private static Resources r;
 }
