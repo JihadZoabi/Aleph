@@ -1,6 +1,6 @@
 package com.example.prototype;
 
-public interface Vis {
+public interface Visitor {
     void on(MultipleChoice m);
     void on(CompleteSentence c);
 }

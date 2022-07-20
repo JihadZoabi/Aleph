@@ -1,5 +1,5 @@
 package com.example.prototype;
 
 public interface Question {
-    void use(Vis v);
+    void use(Visitor v);
 }

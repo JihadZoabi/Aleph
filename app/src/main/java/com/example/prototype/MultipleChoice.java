@@ -15,7 +15,7 @@ public class MultipleChoice implements Question {
     public int getCorrect() {
         return correct;
     }
-    public void use(Vis v) {
+    public void use(Visitor v) {
         v.on(this);
     }
     private String question;

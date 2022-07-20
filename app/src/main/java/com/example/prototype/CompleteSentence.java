@@ -13,7 +13,7 @@ public class CompleteSentence implements Question {
     }
     private String sentence;
     private String completion;
-    public void use(Vis v) {
+    public void use(Visitor v) {
         v.on(this);
     }
 }
