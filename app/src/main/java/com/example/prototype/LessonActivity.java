@@ -53,12 +53,13 @@ public class LessonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (i[0] < l.count()){
-                    int progressForBarTheProgressbarNotThePerson = (int)(((double)i[0]/(double)l.count())*100)
-                            +
-                            ;
+                    int progressForBarTheProgressbarNotThePerson = (int)(((double)i[0]/(double)l.count())*100);
                     Log.d("division", String.valueOf(progressForBarTheProgressbarNotThePerson));
                     BarButTheProgressbarNotThePerson.setProgress(progressForBarTheProgressbarNotThePerson);
                     show(l.getQ(i[0]));
+                }
+                if(i[0] == l.count()){
+                    startActivity(new Intent(LessonActivity.this, LessonFinishActivity.class));
                 }
                 i[0]++;
             }
