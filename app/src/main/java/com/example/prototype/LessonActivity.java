@@ -15,7 +15,7 @@ import com.example.prototype.fragments.FourPicturesFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
-    Button continueBtn;
+    static Button continueBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,4 +54,7 @@ public class LessonActivity extends AppCompatActivity {
         mTransaction.replace(R.id.questionContainer, fragment, fragment.getClass().getName());
         mTransaction.commit();
     }
+
+    public static void revealButton() {continueBtn.setVisibility(View.VISIBLE);}
+    public static void hideButton() {continueBtn.setVisibility(View.INVISIBLE);}
 }
