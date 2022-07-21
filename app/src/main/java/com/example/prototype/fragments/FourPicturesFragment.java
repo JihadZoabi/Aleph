@@ -14,17 +14,16 @@ import androidx.fragment.app.Fragment;
 
 import com.example.prototype.CompleteSentence;
 import com.example.prototype.FourPictures;
+import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
+import com.squareup.picasso.Picasso;
 
 public class FourPicturesFragment extends Fragment implements View.OnClickListener {
 
     private TextView questionText;
-    private ImageView imageChoice1;
-    private ImageView imageChoice2;
-    private ImageView imageChoice3;
-    private ImageView imageChoice4;
+    private ImageView[] imageChoices;
 
-    private int correctImage;
+    private ImageView correct;
 
     private FourPictures f;
 
@@ -37,24 +36,34 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
         View v = inflater.inflate(R.layout.fragment_four_pictures, container, false);
 
         questionText = v.findViewById(R.id.fourPicturesQuestion);
-        imageChoice1 = v.findViewById(R.id.imageTopRight);
-        imageChoice2 = v.findViewById(R.id.imageBottomRight);
-        imageChoice3 = v.findViewById(R.id.imageBottomLeft);
-        imageChoice4 = v.findViewById(R.id.imageTopLeft);
+        imageChoices[0] = v.findViewById(R.id.imageTopRight);
+        imageChoices[1] = v.findViewById(R.id.imageBottomRight);
+        imageChoices[2] = v.findViewById(R.id.imageBottomLeft);
+        imageChoices[3] = v.findViewById(R.id.imageTopLeft);
+
+        updateQuestion();
 
         return v;
     }
 
     public void updateQuestion() {
         questionText.setText(f.getQuestion());
-
+        for (int i = 0; i < 4; ++i)
+            Picasso.get().load(f.getAnswers()[i]).into(imageChoices[i]);
+        correct = imageChoices[f.getCorrect()];
     }
 
     @Override
     public void onClick(View view) {
         if (view instanceof ImageView) {
-            ImageView mImage = (ImageView) view;
-
+            ImageView chosenImage = (ImageView) view;
+            if (chosenImage == correct) {
+                Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                LessonActivity.revealButton();
+            }
+            else {
+                Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

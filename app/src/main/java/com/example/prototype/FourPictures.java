@@ -27,9 +27,6 @@ public class FourPictures implements Question {
     public String toString() {
         return "FourPictures: " + stringer();
     }
-    public int count() {
-        return answers.length;
-    }
     public String getQuestion() {
         return question;
     }
