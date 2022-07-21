@@ -1,6 +1,7 @@
 package com.example.prototype.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.prototype.BadXML;
+import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
 
@@ -46,7 +48,13 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         mButtonChoice3 = (Button) v.findViewById(R.id.choice3);
         mButtonChoice4 = (Button) v.findViewById(R.id.choice4);
 
+        mButtonChoice1.setOnClickListener(this);
+        mButtonChoice2.setOnClickListener(this);
+        mButtonChoice3.setOnClickListener(this);
+        mButtonChoice4.setOnClickListener(this);
+
         updateQuestion();
+        LessonActivity.hideButton();
 
         return v;
     }
@@ -56,6 +64,9 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
         mButtonChoice1.setText(m.getAnswers()[0]);
         mButtonChoice2.setText(m.getAnswers()[1]);
+
+        mAnswer = m.getAnswers()[m.getCorrect()];
+
         switch(m.count()){
             default:
                 throw new BadXML();
@@ -74,7 +85,6 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         }
 
     }
-
     @Override
     public void onClick(View v) {
         if (v instanceof Button) {
@@ -82,6 +92,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
             if (chosenButton.getText().toString().equals(mAnswer)) {
                 //TODO if correct.
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
+                LessonActivity.revealButton();
             }
             else {
                 //TODO if wrong.
