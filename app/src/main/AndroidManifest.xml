@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prototype">
         <activity
+            android:name=".FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LessonFinishActivity"
+            android:exported="false" />
+        <activity
             android:name=".LessonActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
