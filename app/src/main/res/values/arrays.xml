@@ -7,6 +7,7 @@
         <item>lessonName</item>
         <item>@array/q1</item>
         <item>@array/q2</item>
+        <item>@array/q3</item>
     </array>
     <array name="q1">
         <item>MultipleChoice</item>
@@ -21,5 +22,12 @@
         <item>1</item>
         <item>6</item>
         <item>4</item>
+    </array>
+    <array name="q3">
+        <item>MultipleChoice</item>
+        <item>Which economic ideology is better? (As oppose to the other being evil satanic propaganda)</item>
+        <item>0</item>
+        <item>Communism</item>
+        <item>Capitalism</item>
     </array>
 </resources>

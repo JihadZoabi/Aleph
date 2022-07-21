@@ -14,12 +14,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:text="What is the answer for life, the universe and everything?"
-        android:textSize="20sp"
         android:padding="8dp"
         android:layout_marginBottom="40dp"
-        android:id="@+id/question"/>
+        android:id="@+id/question"
+        android:textColor="#795F5F"
+        android:textFontWeight="300"
+        android:textSize="20sp"/>
 
 
     <Button

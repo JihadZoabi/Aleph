@@ -9,18 +9,28 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.prototype.fragments.CompleteSentenceFragment;
 import com.example.prototype.fragments.FourPicturesFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
+
     static Button continueBtn;
+    ProgressBar BarButTheProgressbarNotThePerson;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
         continueBtn = findViewById(R.id.continueBtn);
+        BarButTheProgressbarNotThePerson = findViewById(R.id.lesson_progress);
+
+
+
         buildLesson(Lessons.get("lessonName"));
     }
     private void show(Question q) {
@@ -43,6 +53,11 @@ public class LessonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (i[0] < l.count()){
+                    int progressForBarTheProgressbarNotThePerson = (int)(((double)i[0]/(double)l.count())*100)
+                            +
+                            ;
+                    Log.d("division", String.valueOf(progressForBarTheProgressbarNotThePerson));
+                    BarButTheProgressbarNotThePerson.setProgress(progressForBarTheProgressbarNotThePerson);
                     show(l.getQ(i[0]));
                 }
                 i[0]++;
@@ -56,5 +71,7 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     public static void revealButton() {continueBtn.setVisibility(View.VISIBLE);}
-    public static void hideButton() {continueBtn.setVisibility(View.INVISIBLE);}
+    public static void hideButton() {continueBtn.setVisibility(View.INVISIBLE);
+
+    }
 }
