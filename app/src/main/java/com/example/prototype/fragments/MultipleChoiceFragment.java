@@ -14,6 +14,7 @@ import com.example.prototype.BadXML;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
 
+
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener {
     private TextView mQuestionView;
     private Button mButtonChoice1;

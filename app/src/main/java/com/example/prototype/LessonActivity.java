@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.prototype.fragments.CompleteSentenceFragment;
+import com.example.prototype.fragments.FourPicturesFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
@@ -22,21 +23,27 @@ public class LessonActivity extends AppCompatActivity {
         continueBtn = findViewById(R.id.continueBtn);
         buildLesson(Lessons.get("lessonName"));
     }
+    private void show(Question q) {
+        q.use(new Visitor() {
+            public void on(MultipleChoice m) {
+                showFragment(new MultipleChoiceFragment(m));
+            }
+            public void on(CompleteSentence c) {
+                showFragment(new CompleteSentenceFragment(c));
+            }
+            public void on(FourPictures f) {
+                showFragment(new FourPicturesFragment(f));
+            }
+        });
+    }
     public void buildLesson(Lesson l){
-        final int[] i = {0};
-        Log.d("I mean Bar is", String.valueOf(l == null));
+        final int[] i = {1};
+        show(l.getQ(0));
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (i[0] < l.count()){
-                    l.getQ(i[0]).use(new Visitor() {
-                        public void on(MultipleChoice m) {
-                            showFragment(new MultipleChoiceFragment(m));
-                        }
-                        public void on(CompleteSentence c) {
-                            showFragment(new CompleteSentenceFragment(c));
-                        }
-                    });
+                    show(l.getQ(i[0]));
                 }
                 i[0]++;
             }

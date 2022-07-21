@@ -38,3 +38,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 }
+
+/*
+Lessons.get({name_of_lesson: String});
+ */
