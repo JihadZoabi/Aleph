@@ -6,6 +6,7 @@
     <array name="l1">
         <item>lessonName</item>
         <item>@array/q1</item>
+        <item>@array/q2</item>
     </array>
     <array name="q1">
         <item>MultipleChoice</item>
@@ -13,5 +14,12 @@
         <item>0</item>
         <item>Eyal</item>
         <item>Jihad</item>
+    </array>
+    <array name="q2">
+        <item>MultipleChoice</item>
+        <item>What 2+2?</item>
+        <item>1</item>
+        <item>6</item>
+        <item>4</item>
     </array>
 </resources>
