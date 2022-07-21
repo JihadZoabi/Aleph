@@ -16,15 +16,24 @@
 
     </RelativeLayout>
 
-    <View
+    <RelativeLayout
         android:id="@+id/vector"
         android:layout_width="112dp"
         android:layout_height="91dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/lesson_vector"
+        android:backgroundTint="@color/white"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_lesson_vector"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level 1"
+            android:layout_centerInParent="true"
+            android:textSize="20dp"/>
+    </RelativeLayout>
 
     <View
         android:layout_width="20dp"

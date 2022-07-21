@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Love"
-        android:background="#0091EA"
+        android:background="#83CEC8"
         android:textColor="#fff"
         android:padding="8dp"
         android:layout_marginBottom="24dp"
