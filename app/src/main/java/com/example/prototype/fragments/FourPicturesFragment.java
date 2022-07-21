@@ -21,7 +21,7 @@ import com.squareup.picasso.Picasso;
 public class FourPicturesFragment extends Fragment implements View.OnClickListener {
 
     private TextView questionText;
-    private ImageView[] imageChoices;
+    private ImageView[] imageChoices = new ImageView[4];
 
     private ImageView correct;
 
@@ -34,14 +34,16 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_four_pictures, container, false);
-
-        questionText = v.findViewById(R.id.fourPicturesQuestion);
-        imageChoices[0] = v.findViewById(R.id.imageTopRight);
-        imageChoices[1] = v.findViewById(R.id.imageBottomRight);
-        imageChoices[2] = v.findViewById(R.id.imageBottomLeft);
-        imageChoices[3] = v.findViewById(R.id.imageTopLeft);
+        Picasso.get().setLoggingEnabled(true);        questionText = v.findViewById(R.id.fourPicturesQuestion);
+        imageChoices[0] = (ImageView) v.findViewById(R.id.imageTopRight);
+        imageChoices[1] = (ImageView) v.findViewById(R.id.imageBottomRight);
+        imageChoices[2] = (ImageView) v.findViewById(R.id.imageBottomLeft);
+        imageChoices[3] = (ImageView) v.findViewById(R.id.imageTopLeft);
 
         updateQuestion();
+
+        for (int i = 0; i < 4; ++i)
+            imageChoices[i].setOnClickListener(this);
 
         return v;
     }

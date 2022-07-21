@@ -45,6 +45,9 @@ public class Lessons {
                     case "MultipleChoice":
                         qs[j - 1] = new MultipleChoice(data);
                         break;
+                    case "FourPictures":
+                        qs[j - 1] = new FourPictures(data);
+                        break;
                     default:
                         throw new BadXML();
                 }

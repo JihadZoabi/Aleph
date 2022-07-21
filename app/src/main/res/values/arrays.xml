@@ -24,10 +24,12 @@
         <item>4</item>
     </array>
     <array name="q3">
-        <item>MultipleChoice</item>
-        <item>Which economic ideology is better? (As oppose to the other being evil satanic propaganda)</item>
+        <item>FourPictures</item>
+        <item>Click on the Dog</item>
         <item>0</item>
-        <item>Communism</item>
-        <item>Capitalism</item>
+        <item>https://i.imgur.com/LgezwBt.png</item>
+        <item>https://i.imgur.com/wfXSwZ1.png</item>
+        <item>https://i.imgur.com/AgwBT34.png</item>
+        <item>https://i.imgur.com/tGJL9rS.png</item>
     </array>
 </resources>
