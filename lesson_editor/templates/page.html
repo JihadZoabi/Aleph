@@ -1,0 +1,23 @@
+<h1>Lesson Editor</h1>
+<br>
+<h2>Add question</h2>
+<form action="/questions" target="_blank">
+  <label for="name">Name</label><br>
+  <input type="text" id="name" name="name"><br>
+  {% for type in qtypes %}
+    <input type="radio" id="{{ type }}" name="qtype"
+       value="{{ type }}">
+    <label for="{{ type }}">{{ type }}</label><br>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+<h2>Add lesson</h2>
+<form action="/lessons">
+  {% for q in existingqs %}
+    <input type="checkbox" id="{{ loop.index }}" name="qs" value="{{ loop.index }}">
+    <label for="{{ loop.index }}">{{ q }}</label>
+    <br>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+<br>
