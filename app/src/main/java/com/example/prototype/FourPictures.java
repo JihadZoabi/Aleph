@@ -9,7 +9,7 @@ public class FourPictures implements Question {
         this.correct = correct;
     }
     public FourPictures(String[] data) {
-        if (data.length != 3)
+        if (data.length != 6)
             throw new BadXML();
         this.question = data[0];
         this.correct = Integer.parseInt(data[1]);

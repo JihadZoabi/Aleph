@@ -7,6 +7,7 @@
         <item>lessonName</item>
         <item>@array/q1</item>
         <item>@array/q2</item>
+        <item>@array/q3</item>
     </array>
     <array name="q1">
         <item>MultipleChoice</item>
@@ -21,5 +22,14 @@
         <item>1</item>
         <item>6</item>
         <item>4</item>
+    </array>
+    <array name="q3">
+        <item>FourPictures</item>
+        <item>Click on the Dog</item>
+        <item>0</item>
+        <item>https://i.imgur.com/LgezwBt.png</item>
+        <item>https://i.imgur.com/wfXSwZ1.png</item>
+        <item>https://i.imgur.com/AgwBT34.png</item>
+        <item>https://i.imgur.com/tGJL9rS.png</item>
     </array>
 </resources>
