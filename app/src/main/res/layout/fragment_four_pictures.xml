@@ -47,11 +47,12 @@
 
     <TextView
         android:id="@+id/fourPicturesQuestion"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="249dp"
+        android:layout_height="38dp"
         android:layout_marginTop="100dp"
-        android:textSize="25dp"
         android:text="Click on the cute dog"
+        android:textSize="25dp"
+        android:textColor="#795F5F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

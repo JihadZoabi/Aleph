@@ -9,8 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:gravity="center"
-    >
+    android:gravity="center">
 
     <TextView
         android:layout_width="match_parent"
