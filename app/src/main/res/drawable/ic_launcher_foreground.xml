@@ -7,6 +7,7 @@
       android:scaleY="0.071685"
       android:translateX="-26.9952"
       android:translateY="2.5195496">
+
     <path
         android:pathData="m605.27,188l1066.67,-0l-7.42,1066.67L605.27,1254.67Z"
         android:fillColor="#b681da"
