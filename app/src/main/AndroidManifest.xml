@@ -14,7 +14,10 @@
         <activity
             android:name=".LessonActivity"
             android:exported="false">
-
+        </activity>
+        <activity
+            android:name=".LessonFinishActivity"
+            android:exported="false">
         </activity>
         <activity
             android:name=".MainActivity"
