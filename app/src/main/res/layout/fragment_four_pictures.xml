@@ -10,33 +10,33 @@
         android:id="@+id/rectangle_1"
         android:layout_width="296dp"
         android:layout_height="451dp"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/four_pictures_rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fourPicturesQuestion"
-        android:layout_width="249dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Click on the cute dog"
-        android:textSize="25dp"
         android:textColor="#795F5F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="@id/rectangle_1"
+        app:layout_constraintRight_toRightOf="@id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@id/rectangle_1" />
 
-        app:layout_constraintTop_toTopOf="parent" />
 
-    </View>
 
     <ImageView
         android:id="@+id/imageTopLeft"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:background="@drawable/border_image_four_pictures"
         android:layout_marginStart="50dp"
         android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,16 +47,18 @@
         android:id="@+id/imageBottomLeft"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:background="@drawable/border_image_four_pictures"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/soundwave" />
 
     <ImageView
         android:id="@+id/imageTopRight"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:background="@drawable/border_image_four_pictures"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,10 +69,21 @@
         android:id="@+id/imageBottomRight"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:background="@drawable/border_image_four_pictures"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/sound_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/soundwave"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/fourPicturesQuestion" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

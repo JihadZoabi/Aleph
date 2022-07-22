@@ -24,6 +24,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     private ImageView[] imageChoices = new ImageView[4];
 
     private ImageView correct;
+    private ImageView waveSound;
 
     private FourPictures f;
 
@@ -34,13 +35,16 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_four_pictures, container, false);
-        Picasso.get().setLoggingEnabled(true);        questionText = v.findViewById(R.id.fourPicturesQuestion);
+        Picasso.get().setLoggingEnabled(true);
+        questionText = v.findViewById(R.id.fourPicturesQuestion);
+        waveSound = v.findViewById(R.id.sound_wave);
         imageChoices[0] = (ImageView) v.findViewById(R.id.imageTopRight);
         imageChoices[1] = (ImageView) v.findViewById(R.id.imageBottomRight);
         imageChoices[2] = (ImageView) v.findViewById(R.id.imageBottomLeft);
         imageChoices[3] = (ImageView) v.findViewById(R.id.imageTopLeft);
 
         updateQuestion();
+        LessonActivity.hideButton();
 
         for (int i = 0; i < 4; ++i)
             imageChoices[i].setOnClickListener(this);
