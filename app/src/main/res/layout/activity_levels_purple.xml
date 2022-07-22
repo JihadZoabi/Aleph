@@ -1,6 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/purple_background">
 
+    <View
+        android:id="@+id/small_ellipse_9"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="324dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_10"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="356dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_12"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="376dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_13"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="188dp"
+        android:layout_marginBottom="392dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_5"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_3"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="216dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_4"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="252dp"
+        android:layout_marginBottom="216dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_6"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="280dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_7"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="216dp"
+        android:layout_marginBottom="304dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_8"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="188dp"
+        android:layout_marginBottom="312dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_2"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="196dp"
+        android:layout_marginBottom="176dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/ellipse_1"
+        android:layout_width="500dp"
+        android:layout_height="329dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="528dp"
+        android:background="@drawable/ellipse"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/lessonLevel1"
+        android:layout_width="112dp"
+        android:layout_height="91dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/ic_lesson_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:id="@+id/lessonLevel2"
+        android:layout_width="112dp"
+        android:layout_height="91dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/ic_lesson_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/lessonLevel3"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="332dp"
+        android:background="@drawable/ic_lesson_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/lessonLevel4"
+        android:layout_width="112dp"
+        android:layout_height="91dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="392dp"
+        android:background="@drawable/ic_lesson_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/small_ellipse_1"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/small_ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

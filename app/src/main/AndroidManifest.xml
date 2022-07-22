@@ -16,6 +16,10 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".FoodActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".LessonFinishActivity"
             android:exported="false">
         </activity>
