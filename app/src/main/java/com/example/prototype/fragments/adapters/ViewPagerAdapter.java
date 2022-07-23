@@ -8,14 +8,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
     private ArrayList<Fragment> mFragmentList = new ArrayList<>();
     private ArrayList<String> mFragmentTitleList = new ArrayList<>();
-
 
     @NonNull
     @Override
@@ -27,10 +25,12 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mFragmentList.size();
     }
+
     @Override
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
     }
+
     public void addFragment(Fragment fragment,String title) {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);

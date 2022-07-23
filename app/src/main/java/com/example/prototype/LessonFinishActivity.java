@@ -8,16 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class LessonFinishActivity extends AppCompatActivity {
-
-    Button returnBtn;
+    private Button returnBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_finish);
-
         returnBtn = findViewById(R.id.returnBtn);
-
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

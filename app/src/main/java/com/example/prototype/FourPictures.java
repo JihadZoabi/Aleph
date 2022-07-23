@@ -8,6 +8,7 @@ public class FourPictures implements Question {
         this.answers = pictureLinks;
         this.correct = correct;
     }
+
     public FourPictures(String[] data) {
         if (data.length != 6)
             throw new BadXML();
@@ -19,26 +20,32 @@ public class FourPictures implements Question {
     protected String stringer() {
         String str = question + " The correct answer is " + correct +
                 ".\nThe answers are:";
-        for (int i = 0; i < answers.length; ++i)
+        for (int i = 0; i < answers.length; ++i) {
             str += "\n" + answers[i];
+        }
         return str;
     }
 
     public String toString() {
         return "FourPictures: " + stringer();
     }
+
     public String getQuestion() {
         return question;
     }
+
     public String[] getAnswers() {
         return answers;
     }
+
     public int getCorrect() {
         return correct;
     }
+
     public void use(Visitor v) {
         v.on(this);
     }
+    
     private String question;
     private String[] answers;
     private int correct;

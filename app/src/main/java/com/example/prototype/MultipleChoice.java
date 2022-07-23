@@ -8,6 +8,7 @@ public class MultipleChoice implements Question {
         this.answers = answers;
         this.correct = correct;
     }
+
     public MultipleChoice(String[] data) {
         if (data.length < 3)
             throw new BadXML();

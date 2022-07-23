@@ -18,8 +18,7 @@ import com.example.prototype.fragments.adapters.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
-    ActivityMainBinding binding;
+   private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
+
     private void replaceFragment (Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
