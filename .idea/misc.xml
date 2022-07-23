@@ -8,6 +8,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/circle_shape.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/curve_toolbar_bg.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/elipse.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/ellipse.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/four_pictures_rectangle.xml" value="0.1" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/ic_locked_lock.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/iphone_13_p.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/rect_blue.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/rect_green.xml" value="0.16111111111111112" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/rect_purple.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/rect_yellow.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/rectangle_6.xml" value="0.1" />
@@ -44,7 +46,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_cart.xml" value="0.1796875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_complete_sentence.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_four_pictures.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_home.xml" value="0.26556016597510373" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_leaderboard.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_multiple_choice.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/layout/fragment_profile.xml" value="0.14666666666666667" />
