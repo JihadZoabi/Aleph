@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +20,9 @@ import com.example.prototype.fragments.MultipleChoiceFragment;
 public class LessonActivity extends AppCompatActivity {
     static Button continueBtn;
     private ProgressBar barButTheProgressBarNotThePerson;
+    private Lesson l;
+    private int curr;
+    private SharedPreferences.Editor e;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +30,25 @@ public class LessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lesson);
         continueBtn = findViewById(R.id.continueBtn);
         barButTheProgressBarNotThePerson = findViewById(R.id.lesson_progress);
-        buildLesson(Lessons.get("lessonName"));
+        l = Lessons.get("lessonName");
+        curr = 0;
+        e = getSharedPreferences("history", Context.MODE_PRIVATE).edit();
+        continueBtn.setOnClickListener(view -> advance());
+        advance();
     }
 
-    private void show(Lesson l, int i) {
-        l.getQ(i).use(new Visitor() {
+    private static int percent(int a, int b) {
+        return (int) ((double) a * 100 / b);
+    }
+
+    private void advance() {
+        if (curr >= l.count()) {
+            startActivity(new Intent(LessonActivity.this, LessonFinishActivity.class));
+            return;
+        }
+        int progressForBarTheProgressBarNotThePerson = percent(curr, l.count());
+        barButTheProgressBarNotThePerson.setProgress(progressForBarTheProgressBarNotThePerson);
+        l.getQ(curr++).use(new Visitor() {
             public void on(MultipleChoice m) {
                 showFragment(new MultipleChoiceFragment(l, m));
             }
@@ -40,30 +59,8 @@ public class LessonActivity extends AppCompatActivity {
                 showFragment(new FourPicturesFragment(l, f));
             }
         });
-    }
-
-    private static int percent(int a, int b) {
-        return (int) ((double) a * 100 / b);
-    }
-
-    public void buildLesson(Lesson l){
-        final int[] i = {1};
-        show(l, i[0]);
-        continueBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (i[0] < l.count()) {
-                    int progressForBarTheProgressbarNotThePerson = percent(i[0], l.count());
-                    Log.d("division", String.valueOf(progressForBarTheProgressbarNotThePerson));
-                    barButTheProgressBarNotThePerson.setProgress(progressForBarTheProgressbarNotThePerson);
-                    show(l, i[0]);
-                }
-                if (i[0] == l.count()) {
-                    startActivity(new Intent(LessonActivity.this, LessonFinishActivity.class));
-                }
-                i[0]++;
-            }
-        });
+        e.putInt(l.getName(), l.getXP());
+        e.apply();
     }
 
     public void showFragment(Fragment fragment) {
