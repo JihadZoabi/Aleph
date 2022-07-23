@@ -15,7 +15,7 @@ import com.example.prototype.R;
 public class CompleteSentenceFragment extends Fragment {
     private TextView questionText;
     private EditText completeAnswer;
-    private CompleteSentence c;
+    private final CompleteSentence c;
 
     public CompleteSentenceFragment(CompleteSentence c){
         this.c = c;

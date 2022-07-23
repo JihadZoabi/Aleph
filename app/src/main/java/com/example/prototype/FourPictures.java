@@ -1,5 +1,7 @@
 package com.example.prototype;
 
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 
 public class FourPictures implements Question {
@@ -29,6 +31,7 @@ public class FourPictures implements Question {
         return str.toString();
     }
 
+    @NonNull
     public String toString() {
         return "FourPictures: " + stringer();
     }

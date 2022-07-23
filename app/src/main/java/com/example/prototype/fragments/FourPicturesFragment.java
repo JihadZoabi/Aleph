@@ -4,15 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.prototype.CompleteSentence;
 import com.example.prototype.FourPictures;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
@@ -20,10 +17,10 @@ import com.squareup.picasso.Picasso;
 
 public class FourPicturesFragment extends Fragment implements View.OnClickListener {
     private TextView questionText;
-    private ImageView[] imageChoices = new ImageView[4];
+    private final ImageView[] imageChoices = new ImageView[4];
     private ImageView correct;
     private ImageView waveSound;
-    private FourPictures f;
+    private final FourPictures f;
 
     public FourPicturesFragment(FourPictures f){
         this.f = f;
