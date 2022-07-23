@@ -5,28 +5,138 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LessonFinishActivity"
-    android:background="@color/white">
+    android:layoutDirection="ltr"
+    android:background="@color/purple_background">
+
+    <TextView
+        android:id="@+id/congratsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Congrats!"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="@id/animationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:layout_constraintTop_toBottomOf="@id/congratsText"
+        app:layout_constraintBottom_toTopOf="@id/completeText"
+        app:lottie_rawRes="@raw/medal_animation" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/medal"-->
+<!--        android:layout_width="175dp"-->
+<!--        android:layout_height="175dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:translationZ="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/congratsText"-->
+<!--        android:src="@drawable/medal"/>-->
+
+<!--    <View-->
+<!--        android:id="@+id/accuracyRect"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:background="@drawable/strip_medal"-->
+<!--        android:elevation="4dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.266"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/congratsText" />-->
+
+    <TextView
+        android:id="@+id/completeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You just completed level X of Y!"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rectangle_5" />
+
+    <View
+        android:id="@+id/rectangle_5"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/completeText" />
+
+    <View
+        android:id="@+id/flafelRect"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Congragulations!1!!11"
-        android:fontFamily="@font/kiddraw"
-        android:textSize="30dp"
-        android:textColor="#795F5F"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Continue"
+        android:textSize="20dp"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/returnBtn"
+        app:layout_constraintEnd_toEndOf="@+id/returnBtn"
+        app:layout_constraintStart_toStartOf="@+id/returnBtn"
+        app:layout_constraintTop_toTopOf="@+id/returnBtn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/returnBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/flafelRect" />
 
-    <Button
-        android:id="@+id/returnBtn"
+    <ImageView
+        android:id="@+id/flafel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="return"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:src="@drawable/flafel"
+        app:layout_constraintBottom_toBottomOf="@+id/flafelRect"
+        app:layout_constraintEnd_toEndOf="@+id/flafelRect"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="@+id/flafelRect"
+        app:layout_constraintTop_toTopOf="@+id/flafelRect" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+3"
+        android:textSize="25dp"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/flafelRect"
+        app:layout_constraintEnd_toEndOf="@+id/flafelRect"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="@+id/flafelRect"
+        app:layout_constraintTop_toTopOf="@+id/flafelRect"
+        app:layout_constraintVertical_bias="0.478" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.example.prototype.FoodActivity;
 import com.example.prototype.LessonActivity;
@@ -28,7 +29,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-
         rect6 = v.findViewById(R.id.rectangle_6);
         foodRect = v.findViewById(R.id.rectangle_7);
 
