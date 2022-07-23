@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import com.example.prototype.R;
 
 public class ProfileFragment extends Fragment {
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

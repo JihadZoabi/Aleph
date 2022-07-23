@@ -19,13 +19,10 @@ import com.example.prototype.R;
 import com.squareup.picasso.Picasso;
 
 public class FourPicturesFragment extends Fragment implements View.OnClickListener {
-
     private TextView questionText;
     private ImageView[] imageChoices = new ImageView[4];
-
     private ImageView correct;
     private ImageView waveSound;
-
     private FourPictures f;
 
     public FourPicturesFragment(FourPictures f){
@@ -42,20 +39,19 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
         imageChoices[1] = (ImageView) v.findViewById(R.id.imageBottomRight);
         imageChoices[2] = (ImageView) v.findViewById(R.id.imageBottomLeft);
         imageChoices[3] = (ImageView) v.findViewById(R.id.imageTopLeft);
-
         updateQuestion();
         LessonActivity.hideButton();
-
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 4; ++i) {
             imageChoices[i].setOnClickListener(this);
-
+        }
         return v;
     }
 
     public void updateQuestion() {
         questionText.setText(f.getQuestion());
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 4; ++i) {
             Picasso.get().load(f.getAnswers()[i]).into(imageChoices[i]);
+        }
         correct = imageChoices[f.getCorrect()];
     }
 
@@ -66,8 +62,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
             if (chosenImage == correct) {
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
-            }
-            else {
+            } else {
                 Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
             }
         }

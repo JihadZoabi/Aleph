@@ -16,7 +16,6 @@ import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
 
-
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener {
     private TextView mQuestionView;
     private Button mButtonChoice1;
@@ -41,35 +40,26 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
-
         mQuestionView = (TextView) v.findViewById(R.id.question);
         mButtonChoice1 = (Button) v.findViewById(R.id.choice1);
         mButtonChoice2 = (Button) v.findViewById(R.id.choice2);
         mButtonChoice3 = (Button) v.findViewById(R.id.choice3);
         mButtonChoice4 = (Button) v.findViewById(R.id.choice4);
-
         mButtonChoice1.setOnClickListener(this);
         mButtonChoice2.setOnClickListener(this);
         mButtonChoice3.setOnClickListener(this);
         mButtonChoice4.setOnClickListener(this);
-
         updateQuestion();
         LessonActivity.hideButton();
-
         return v;
     }
 
     private void updateQuestion() {
         mQuestionView.setText(m.getQuestion());
-
         mButtonChoice1.setText(m.getAnswers()[0]);
         mButtonChoice2.setText(m.getAnswers()[1]);
-
         mAnswer = m.getAnswers()[m.getCorrect()];
-
-        switch(m.count()){
-            default:
-                throw new BadXML();
+        switch (m.count()) {
             case 2:
                 mButtonChoice3.setVisibility(View.INVISIBLE);
                 mButtonChoice4.setVisibility(View.INVISIBLE);
@@ -82,9 +72,12 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 mButtonChoice3.setText(m.getAnswers()[2]);
                 mButtonChoice4.setText(m.getAnswers()[3]);
                 break;
+            default:
+                throw new BadXML();
         }
 
     }
+
     @Override
     public void onClick(View v) {
         if (v instanceof Button) {

@@ -3,20 +3,24 @@ package com.example.prototype;
 import java.util.Arrays;
 
 public class MultipleChoice implements Question {
-    public MultipleChoice(String question, String[] answers, int correct) {
+    public MultipleChoice(String question, String[] answers, int correct, int xp) {
         this.question = question;
         this.answers = answers;
         this.correct = correct;
+        this.xp = xp;
     }
+
     public MultipleChoice(String[] data) {
-        if (data.length < 3)
+        if (data.length < 4)
             throw new BadXML();
-        this.question = data[0];
-        this.correct = Integer.parseInt(data[1]);
-        if (correct > data.length - 2)
+        question = data[0];
+        xp = Integer.parseInt(data[1]);
+        correct = Integer.parseInt(data[2]);
+        if (correct > data.length - 3)
             throw new BadXML();
-        this.answers = Arrays.copyOfRange(data, 2, data.length);
+        answers = Arrays.copyOfRange(data, 3, data.length);
     }
+
     protected String stringer() {
         String str = question + " The correct answer is " + correct +
                 ".\nThe answers are:";
@@ -24,25 +28,37 @@ public class MultipleChoice implements Question {
             str += "\n" + answers[i];
         return str;
     }
+
     public String toString() {
         return "MultipleChoice: " + stringer();
     }
+
     public int count() {
         return answers.length;
     }
+
     public String getQuestion() {
         return question;
     }
+
     public String[] getAnswers() {
         return answers;
     }
+
     public int getCorrect() {
         return correct;
     }
+
     public void use(Visitor v) {
         v.on(this);
     }
-    private String question;
-    private String[] answers;
-    private int correct;
+
+    public int getXP() {
+        return xp;
+    }
+
+    private final int xp;
+    private final String question;
+    private final String[] answers;
+    private final int correct;
 }
