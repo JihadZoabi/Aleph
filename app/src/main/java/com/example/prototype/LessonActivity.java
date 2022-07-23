@@ -43,7 +43,7 @@ public class LessonActivity extends AppCompatActivity {
 
     private void advance() {
         if (curr >= l.count()) {
-            startActivity(new Intent(LessonActivity.this, LessonFinishActivity.class));
+            startActivity(new Intent(this, LessonFinishActivity.class));
             return;
         }
         int progressForBarTheProgressBarNotThePerson = percent(curr, l.count());
