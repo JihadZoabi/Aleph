@@ -13,11 +13,9 @@ import com.example.prototype.CompleteSentence;
 import com.example.prototype.R;
 
 public class CompleteSentenceFragment extends Fragment {
-
-    TextView questionText;
-    EditText completeAnswer;
-
-    private CompleteSentence c;
+    private TextView questionText;
+    private EditText completeAnswer;
+    private final CompleteSentence c;
 
     public CompleteSentenceFragment(CompleteSentence c){
         this.c = c;
@@ -26,11 +24,8 @@ public class CompleteSentenceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_complete_sentence, container, false);
-
         questionText = v.findViewById(R.id.questionCompleteTheSentence);
         completeAnswer = v.findViewById(R.id.editTextAnswerCompleteQuestion);
-
-
         return v;
     }
 }

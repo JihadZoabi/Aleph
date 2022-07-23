@@ -1,34 +1,34 @@
 package com.example.prototype;
 
+import androidx.annotation.NonNull;
+
 public class Lesson {
-    Question[] qs;
-    String name;
-    int difficulty;
+    private final Question[] qs;
+    private final String name;
+
+    @NonNull
     public String toString() {
-        String str = name + ": " + difficulty + "\n";
-        for (int i = 0; i < qs.length; ++i)
-            str += qs[i] + "\n";
-        return str;
+        StringBuilder str = new StringBuilder(name + ":\n");
+        for (int i = 0; i < qs.length; ++i) {
+            str.append(qs[i]).append("\n");
+        }
+        return str.toString();
     }
+
     public String getName() {
         return name;
     }
-    public int getDifficulty() {
-        return difficulty;
-    }
+
     public int count() {
         return qs.length;
     }
+
     Question getQ(int index) {
         return qs[index];
     }
+
     public Lesson(String name, Question[] qs) {
         this.qs = qs;
         this.name = name;
-    }
-    public Lesson(String name, int difficulty, Question[] qs) {
-        this.qs = qs;
-        this.name = name;
-        this.difficulty = difficulty;
     }
 }

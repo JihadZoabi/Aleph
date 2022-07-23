@@ -8,16 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 
 import com.example.prototype.FoodActivity;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
 
 public class HomeFragment extends Fragment {
-
-    View rect6;
-    View foodRect;
+    private View sportRect;
+    private View foodRect;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,30 +27,20 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        rect6 = v.findViewById(R.id.rectangle_6);
-        foodRect = v.findViewById(R.id.rectangle_7);
-
-        rect6.setOnClickListener(new View.OnClickListener() {
+        sportRect = v.findViewById(R.id.sportRect);
+        foodRect = v.findViewById(R.id.foodRect);
+        sportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), LessonActivity.class));
             }
         });
-
         foodRect.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), FoodActivity.class));
             }
         });
-
-
-
         return v;
     }
 }
-
-/*
-Lessons.get({name_of_lesson: String});
- */

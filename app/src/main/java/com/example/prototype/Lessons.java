@@ -3,29 +3,33 @@ package com.example.prototype;
 import java.util.HashMap;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.util.Log;
 
 public class Lessons {
     // Used to be a singleton, maybe should be one for testing
     private static boolean setup = false;
     private static final HashMap<String, Lesson> lessons = new HashMap<>();
+
     private static TypedArray getArr(TypedArray arr, int index) {
         int id = arr.getResourceId(index, -1);
         if (id < 0)
             throw new BadXML();
         return arr.getResources().obtainTypedArray(id);
     }
+
     private static String getString(TypedArray arr, int index) {
         if (index < 0 || index >= arr.length())
             throw new BadXML();
         return arr.getString(index);
     }
+
     public static Lesson get(String s) {
         if (!setup)
             throw new BadXML();
         return lessons.get(s);
     }
+
     private Lessons() {}
+
     public static void init(Resources r) {
         TypedArray table = r.obtainTypedArray(R.array.lessons);
         for (int i = 0; i < table.length(); ++i) {
