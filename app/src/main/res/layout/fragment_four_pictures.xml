@@ -31,49 +31,50 @@
         app:layout_constraintTop_toTopOf="@id/rectangle_1" />
 
 
-
     <ImageView
         android:id="@+id/imageTopLeft"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/border_image_four_pictures"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/sound_wave"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageBottomLeft"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/border_image_four_pictures"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/soundwave" />
+        android:src="@drawable/soundwave"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/imageTopLeft" />
 
     <ImageView
         android:id="@+id/imageTopRight"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         android:background="@drawable/border_image_four_pictures"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/sound_wave"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageBottomRight"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/border_image_four_pictures"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/imageTopRight"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView

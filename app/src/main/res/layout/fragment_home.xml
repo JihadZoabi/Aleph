@@ -13,36 +13,27 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@color/white"
+            android:background="@drawable/curve_toolbar_bg"
             android:elevation="2dp">
 
             <TextView
-                android:id="@+id/some_id"
-                android:layout_width="101dp"
-                android:layout_height="53dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="53dp"
-                android:fontFamily="@font/inter"
-                android:gravity="top"
-                android:text="30%"
-                android:textColor="#000000"
-                android:textFontWeight="700"
-                android:textSize="40sp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Welcome Back!"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/short_stack" />
 
-            <TextView
-                android:id="@+id/your_progre"
-                android:layout_width="182dp"
-                android:layout_height="36dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/inter"
-                android:gravity="top"
-                android:text="Your progress"
-                android:textColor="#795F5F"
-                android:textFontWeight="300"
-                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="29dp"
+                android:src="@drawable/icon_app_spokenli" />
         </RelativeLayout>
 
 
@@ -155,7 +146,7 @@
             android:layout_height="65dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="330dp"
-            android:background="@drawable/rect_blue">
+            android:background="@drawable/rect_green">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -195,7 +186,58 @@
                     android:foregroundGravity="left"
                     android:indeterminate="false"
                     android:max="100"
-                    android:progress="50"
+                    android:progress="32"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TransportRect"
+            android:layout_width="300dp"
+            android:layout_height="65dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="410dp"
+            android:background="@drawable/rect_yellow">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/cars" />
+
+                <TextView
+                    android:id="@+id/Transport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/short_stack"
+                    android:text="Transport"
+                    android:textColor="#000000"
+                    android:textFontWeight="800"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarTransport"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/circle_shape"
+                    android:foregroundGravity="left"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="23"
                     android:progressDrawable="@drawable/circular_progress_bar" />
             </LinearLayout>
         </RelativeLayout>
