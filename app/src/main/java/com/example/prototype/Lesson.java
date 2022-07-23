@@ -5,6 +5,15 @@ import androidx.annotation.NonNull;
 public class Lesson {
     private final Question[] qs;
     private final String name;
+    private int xp = 0;
+
+    public int getXP() {
+        return xp;
+    }
+
+    public void gotCorrect(Question q) {
+        xp += q.getXP();
+    }
 
     @NonNull
     public String toString() {

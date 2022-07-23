@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.example.prototype.BadXML;
+import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
@@ -22,10 +23,11 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button mButtonChoice3;
     private Button mButtonChoice4;
     private String mAnswer;
+    private final MultipleChoice m;
+    private final Lesson l;
 
-    final MultipleChoice m;
-
-    public MultipleChoiceFragment(MultipleChoice m){
+    public MultipleChoiceFragment(Lesson l, MultipleChoice m){
+        this.l = l;
         this.m = m;
     }
 
@@ -85,8 +87,8 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 //TODO if correct.
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
-            }
-            else {
+                l.gotCorrect(m);
+            } else {
                 //TODO if wrong.
                 Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
             }

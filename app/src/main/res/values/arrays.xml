@@ -13,12 +13,14 @@
         <item>MultipleChoice</item>
         <item>Who?</item>
         <item>0</item>
+        <item>1</item>
         <item>Eyal</item>
         <item>Jihad</item>
     </array>
     <array name="q2">
         <item>MultipleChoice</item>
         <item>What 2+2?</item>
+        <item>1</item>
         <item>1</item>
         <item>6</item>
         <item>4</item>
@@ -27,6 +29,7 @@
         <item>FourPictures</item>
         <item>To run</item>
         <item>0</item>
+        <item>1</item>
         <item>https://i.imgur.com/a8n8AyZ.png</item>
         <item>https://i.imgur.com/JyD21qv.png</item>
         <item>https://i.imgur.com/2xOG6sq.png</item>

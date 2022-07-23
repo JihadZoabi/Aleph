@@ -18,7 +18,6 @@ import com.example.prototype.fragments.MultipleChoiceFragment;
 public class LessonActivity extends AppCompatActivity {
     static Button continueBtn;
     private ProgressBar barButTheProgressBarNotThePerson;
-    private int xp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +28,16 @@ public class LessonActivity extends AppCompatActivity {
         buildLesson(Lessons.get("lessonName"));
     }
 
-    public int getXP() {
-        return xp;
-    }
-
-    public void incXP(int n) {
-        xp += n;
-    }
-
-    private void show(Question q) {
-        q.use(new Visitor() {
+    private void show(Lesson l, int i) {
+        l.getQ(i).use(new Visitor() {
             public void on(MultipleChoice m) {
-                showFragment(new MultipleChoiceFragment(m));
+                showFragment(new MultipleChoiceFragment(l, m));
             }
             public void on(CompleteSentence c) {
-                showFragment(new CompleteSentenceFragment(c));
+                showFragment(new CompleteSentenceFragment(l, c));
             }
             public void on(FourPictures f) {
-                showFragment(new FourPicturesFragment(f));
+                showFragment(new FourPicturesFragment(l, f));
             }
         });
     }
@@ -57,7 +48,7 @@ public class LessonActivity extends AppCompatActivity {
 
     public void buildLesson(Lesson l){
         final int[] i = {1};
-        show(l.getQ(0));
+        show(l, i[0]);
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +56,7 @@ public class LessonActivity extends AppCompatActivity {
                     int progressForBarTheProgressbarNotThePerson = percent(i[0], l.count());
                     Log.d("division", String.valueOf(progressForBarTheProgressbarNotThePerson));
                     barButTheProgressBarNotThePerson.setProgress(progressForBarTheProgressbarNotThePerson);
-                    show(l.getQ(i[0]));
+                    show(l, i[0]);
                 }
                 if (i[0] == l.count()) {
                     startActivity(new Intent(LessonActivity.this, LessonFinishActivity.class));

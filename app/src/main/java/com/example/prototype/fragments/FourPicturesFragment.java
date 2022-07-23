@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.CompleteSentence;
 import com.example.prototype.FourPictures;
+import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
 import com.squareup.picasso.Picasso;
@@ -21,8 +23,10 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     private ImageView correct;
     private ImageView waveSound;
     private final FourPictures f;
+    private final Lesson l;
 
-    public FourPicturesFragment(FourPictures f){
+    public FourPicturesFragment(Lesson l, FourPictures f){
+        this.l = l;
         this.f = f;
     }
 
@@ -59,6 +63,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
             if (chosenImage == correct) {
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
+                l.gotCorrect(f);
             } else {
                 Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
             }

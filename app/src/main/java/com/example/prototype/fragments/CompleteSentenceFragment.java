@@ -10,14 +10,17 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.prototype.CompleteSentence;
+import com.example.prototype.Lesson;
 import com.example.prototype.R;
 
 public class CompleteSentenceFragment extends Fragment {
     private TextView questionText;
     private EditText completeAnswer;
     private final CompleteSentence c;
+    private final Lesson l;
 
-    public CompleteSentenceFragment(CompleteSentence c){
+    public CompleteSentenceFragment(Lesson l, CompleteSentence c){
+        this.l = l;
         this.c = c;
     }
 
