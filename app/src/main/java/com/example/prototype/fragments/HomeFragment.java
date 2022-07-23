@@ -16,7 +16,7 @@ import com.example.prototype.R;
 
 public class HomeFragment extends Fragment {
 
-    View rect6;
+    View sportRect;
     View foodRect;
 
     @Override
@@ -29,10 +29,10 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        rect6 = v.findViewById(R.id.rectangle_6);
-        foodRect = v.findViewById(R.id.rectangle_7);
+        sportRect = v.findViewById(R.id.sportRect);
+        foodRect = v.findViewById(R.id.foodRect);
 
-        rect6.setOnClickListener(new View.OnClickListener() {
+        sportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), LessonActivity.class));

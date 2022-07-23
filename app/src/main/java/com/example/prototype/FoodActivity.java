@@ -13,8 +13,8 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels_purple);
-        blob1 = (View) findViewById(R.id.lessonLevel1);
-        blob2 = (View) findViewById(R.id.lessonLevel2);
+        blob1 = (View) findViewById(R.id.blob1);
+        blob2 = (View) findViewById(R.id.blob2);
 
     }
 }
