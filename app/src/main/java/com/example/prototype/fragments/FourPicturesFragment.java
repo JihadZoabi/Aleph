@@ -28,6 +28,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     public FourPicturesFragment(Lesson l, FourPictures f){
         this.l = l;
         this.f = f;
+        l.reset();
     }
 
     @Override

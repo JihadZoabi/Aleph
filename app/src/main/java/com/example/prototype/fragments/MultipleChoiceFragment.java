@@ -28,6 +28,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
 
     public MultipleChoiceFragment(Lesson l, MultipleChoice m){
         this.l = l;
+        l.reset();
         this.m = m;
     }
 

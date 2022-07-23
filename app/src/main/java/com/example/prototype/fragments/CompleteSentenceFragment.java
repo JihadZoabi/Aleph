@@ -22,6 +22,7 @@ public class CompleteSentenceFragment extends Fragment {
     public CompleteSentenceFragment(Lesson l, CompleteSentence c){
         this.l = l;
         this.c = c;
+        l.reset();
     }
 
     @Override

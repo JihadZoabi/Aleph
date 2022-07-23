@@ -7,6 +7,10 @@ public class Lesson {
     private final String name;
     private int xp = 0;
 
+    public void reset() {
+        xp = 0;
+    }
+
     public int getXP() {
         return xp;
     }
