@@ -54,6 +54,7 @@ public class LessonActivity extends AppCompatActivity {
     private static int percent(int a, int b) {
         return (int) ((double) a * 100 / b);
     }
+
     public void buildLesson(Lesson l){
         final int[] i = {1};
         show(l.getQ(0));

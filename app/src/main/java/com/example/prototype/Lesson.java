@@ -1,24 +1,19 @@
 package com.example.prototype;
 
 public class Lesson {
-    private Question[] qs;
-    private String name;
-    private int difficulty;
+    private final Question[] qs;
+    private final String name;
 
     public String toString() {
-        String str = name + ": " + difficulty + "\n";
+        StringBuilder str = new StringBuilder(name + ":\n");
         for (int i = 0; i < qs.length; ++i) {
-            str += qs[i] + "\n";
+            str.append(qs[i]).append("\n");
         }
-        return str;
+        return str.toString();
     }
 
     public String getName() {
         return name;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
     }
 
     public int count() {
@@ -32,11 +27,5 @@ public class Lesson {
     public Lesson(String name, Question[] qs) {
         this.qs = qs;
         this.name = name;
-    }
-
-    public Lesson(String name, int difficulty, Question[] qs) {
-        this.qs = qs;
-        this.name = name;
-        this.difficulty = difficulty;
     }
 }
