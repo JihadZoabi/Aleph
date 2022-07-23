@@ -4,18 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.prototype.databinding.ActivityMainBinding;
 import com.example.prototype.fragments.CartFragment;
 import com.example.prototype.fragments.HomeFragment;
 import com.example.prototype.fragments.LeaderBoardFragment;
 import com.example.prototype.fragments.ProfileFragment;
-import com.example.prototype.fragments.adapters.ViewPagerAdapter;
-import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
    private ActivityMainBinding binding;

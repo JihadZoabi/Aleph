@@ -1,7 +1,6 @@
 package com.example.prototype.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button mButtonChoice4;
     private String mAnswer;
 
-    MultipleChoice m;
+    final MultipleChoice m;
 
     public MultipleChoiceFragment(MultipleChoice m){
         this.m = m;

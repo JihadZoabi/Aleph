@@ -1,5 +1,7 @@
 package com.example.prototype;
 
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 
 public class MultipleChoice implements Question {
@@ -22,13 +24,15 @@ public class MultipleChoice implements Question {
     }
 
     protected String stringer() {
-        String str = question + " The correct answer is " + correct +
-                ".\nThe answers are:";
+        StringBuilder str = new StringBuilder(question +
+                " The correct answer is " + correct +
+                ".\nThe answers are:");
         for (int i = 0; i < answers.length; ++i)
-            str += "\n" + answers[i];
-        return str;
+            str.append("\n").append(answers[i]);
+        return str.toString();
     }
 
+    @NonNull
     public String toString() {
         return "MultipleChoice: " + stringer();
     }

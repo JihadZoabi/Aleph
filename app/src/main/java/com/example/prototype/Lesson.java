@@ -1,9 +1,12 @@
 package com.example.prototype;
 
+import androidx.annotation.NonNull;
+
 public class Lesson {
     private final Question[] qs;
     private final String name;
 
+    @NonNull
     public String toString() {
         StringBuilder str = new StringBuilder(name + ":\n");
         for (int i = 0; i < qs.length; ++i) {
