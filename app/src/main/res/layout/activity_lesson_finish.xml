@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/completeText" />
 
-    <View
+    <RelativeLayout
         android:id="@+id/flafelRect"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -89,7 +89,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_5">
+
+        <ImageView
+            android:id="@+id/flafel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flafel"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/flafel"
+            android:text="+7"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -115,28 +137,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flafelRect" />
 
-    <ImageView
-        android:id="@+id/flafel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/flafel"
-        app:layout_constraintBottom_toBottomOf="@+id/flafelRect"
-        app:layout_constraintEnd_toEndOf="@+id/flafelRect"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="@+id/flafelRect"
-        app:layout_constraintTop_toTopOf="@+id/flafelRect" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+3"
-        android:textSize="25dp"
-        android:translationZ="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/flafelRect"
-        app:layout_constraintEnd_toEndOf="@+id/flafelRect"
-        app:layout_constraintHorizontal_bias="0.349"
-        app:layout_constraintStart_toStartOf="@+id/flafelRect"
-        app:layout_constraintTop_toTopOf="@+id/flafelRect"
-        app:layout_constraintVertical_bias="0.478" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
