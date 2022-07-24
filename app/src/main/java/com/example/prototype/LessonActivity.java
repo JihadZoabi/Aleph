@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.speech.RecognitionListener;
+import android.speech.SpeechRecognizer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -54,12 +56,15 @@ public class LessonActivity extends AppCompatActivity {
             public void on(MultipleChoice m) {
                 showFragment(new MultipleChoiceFragment(l, m));
             }
+
             public void on(CompleteSentence c) {
                 showFragment(new CompleteSentenceFragment(l, c));
             }
+
             public void on(FourPictures f) {
                 showFragment(new FourPicturesFragment(l, f));
             }
+
             public void on(LearnPhrase lp) {
                 showFragment(new LearnPhraseFragment(l, lp));
             }

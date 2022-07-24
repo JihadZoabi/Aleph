@@ -21,7 +21,7 @@ public class LearnPhrase implements Question {
         xp = Integer.parseInt(data[1]);
         correct = Integer.parseInt(data[2]);
         if (correct > data.length - 3) {
-            Log.d("Jihad's bad code",correct + " " + (data.length-3));
+            // Log.d("Jihad's bad code",correct + " " + (data.length-3));
             throw new BadXML();
         }
         answers = Arrays.copyOfRange(data, 3, data.length);
