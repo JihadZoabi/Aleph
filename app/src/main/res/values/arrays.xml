@@ -9,6 +9,9 @@
         <item>@array/q2</item>
         <item>@array/q3</item>
         <item>@array/q4</item>
+        <item>@array/q5</item>
+        <item>@array/q6</item>
+        <item>@array/q7</item>
     </array>
     <array name="q1">
         <item>LearnPhrase</item>
@@ -34,7 +37,7 @@
     </array>
     <array name="q3">
         <item>FourPictures</item>
-        <item>To run</item>
+        <item>لاروتس</item>
         <item>0</item>
         <item>1</item>
         <item>https://i.imgur.com/a8n8AyZ.png</item>
@@ -43,6 +46,15 @@
         <item>https://i.imgur.com/xBt1tqV.png</item>
     </array>
     <array name="q4">
+        <item>MultipleChoice</item>
+        <item>How do you say يركض</item>
+        <item>1</item>
+        <item>0</item>
+        <item>لاروتس</item>
+        <item>ليساخيك</item>
+        <item>لسخوت</item>
+    </array>
+    <array name="q5">
         <item>LearnPhrase</item>
         <item>يركض</item>
         <!-- Up is the meaning in Arabic-->
@@ -55,5 +67,24 @@
 <!--       Up is Hebrew word written in Arabic-->
         <item>לרוץ</item>
         <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="q6">
+        <item>MultipleChoice</item>
+        <item>معنى كلمة لاروتس</item>
+        <item>3</item>
+        <item>2</item>
+        <item>يرقص</item>
+        <item>يسبح</item>
+        <item>يركض</item>
+    </array>
+    <array name = "q7">
+        <item>FourPictures</item>
+        <item>لسخوت</item>
+        <item>2</item>
+        <item>3</item>
+        <item>https://i.imgur.com/rgUlQXL.png</item>
+        <item>https://i.imgur.com/JyD21qv.png</item>
+        <item>https://i.imgur.com/NCYI6kq.png</item>
+        <item>https://i.imgur.com/s7OHbfD.png</item>
     </array>
 </resources>
