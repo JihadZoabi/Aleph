@@ -8,22 +8,29 @@
         <item>@array/q1</item>
         <item>@array/q2</item>
         <item>@array/q3</item>
+        <item>@array/q4</item>
     </array>
     <array name="q1">
-        <item>MultipleChoice</item>
-        <item>Who?</item>
+        <item>LearnPhrase</item>
+        <item>يسبح</item>
+        <item>2</item>
         <item>0</item>
-        <item>1</item>
-        <item>Eyal</item>
-        <item>Jihad</item>
+        <item>https://i.imgur.com/NCYI6kq.png</item>
+        <item>ليسخوت</item>
+        <item>לשחות</item>
     </array>
     <array name="q2">
-        <item>MultipleChoice</item>
-        <item>What 2+2?</item>
-        <item>1</item>
-        <item>1</item>
-        <item>6</item>
-        <item>4</item>
+        <item>LearnPhrase</item>
+        <item>يركض</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/a8n8AyZ.png</item>
+        <item>لاروتس</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>לרוץ</item>
     </array>
     <array name="q3">
         <item>FourPictures</item>
@@ -34,5 +41,19 @@
         <item>https://i.imgur.com/JyD21qv.png</item>
         <item>https://i.imgur.com/2xOG6sq.png</item>
         <item>https://i.imgur.com/xBt1tqV.png</item>
+    </array>
+    <array name="q4">
+        <item>LearnPhrase</item>
+        <item>يركض</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+<!--        Up is XP -->
+        <item>0</item>
+<!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/a8n8AyZ.png</item>
+        <item>لاروتس</item>
+<!--       Up is Hebrew word written in Arabic-->
+        <item>לרוץ</item>
+        <!-- Up is Hebrew word written in Hebrew -->
     </array>
 </resources>

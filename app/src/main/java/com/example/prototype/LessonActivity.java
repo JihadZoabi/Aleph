@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 
 import com.example.prototype.fragments.CompleteSentenceFragment;
 import com.example.prototype.fragments.FourPicturesFragment;
+import com.example.prototype.fragments.LearnPhraseFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
@@ -58,6 +59,9 @@ public class LessonActivity extends AppCompatActivity {
             }
             public void on(FourPictures f) {
                 showFragment(new FourPicturesFragment(l, f));
+            }
+            public void on(LearnPhrase lp) {
+                showFragment(new LearnPhraseFragment(l, lp));
             }
         });
         e.putInt(l.getName(), l.getXP());

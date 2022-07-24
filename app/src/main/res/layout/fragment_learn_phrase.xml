@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_background"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:gravity="center">
+
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="296dp"
+        android:layout_height="451dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/four_pictures_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/meaningOfHebrewWordInArabic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:text="hebrewWordInArabic"
+        android:textColor="#795F5F"
+        android:textFontWeight="300"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@id/rectangle_1" />
+
+
+    <ImageView
+        android:id="@+id/pictureOfWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/meaningOfHebrewWordInArabic"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/HebrewWordInArabic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HebrewWordInArabic"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/pictureOfWord" />
+
+    <TextView
+        android:id="@+id/WordInHebrew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WordInHebrew"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/HebrewWordInArabic" />
+
+    <ImageView
+        android:id="@+id/sound_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/soundwave"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/WordInHebrew" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
