@@ -13,6 +13,10 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -21,6 +25,8 @@ public class SignupActivity extends AppCompatActivity {
     Button signupBtn;
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db;
+    private DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,10 @@ public class SignupActivity extends AppCompatActivity {
         signupBtn = findViewById(R.id.signup_button);
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
+        ref = db.getReference("/user");
+
+
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +61,11 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(SignupActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+
+                User user = new User(ref, "eyal", mAuth.getUid());
+
+                ref.child("example-user").child("xp").setValue(5000);
+
                 startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
