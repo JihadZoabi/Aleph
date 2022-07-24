@@ -18,7 +18,7 @@ import com.example.prototype.fragments.FourPicturesFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
 
 public class LessonActivity extends AppCompatActivity {
-    static Button continueBtn;
+    private static Button continueBtn;
     private ProgressBar barButTheProgressBarNotThePerson;
     private Lesson l;
     private int curr;
@@ -44,6 +44,7 @@ public class LessonActivity extends AppCompatActivity {
     private void advance() {
         if (curr >= l.count()) {
             startActivity(new Intent(this, LessonFinishActivity.class));
+            e.putInt(l.getName() + " done", 1);
             return;
         }
         int progressForBarTheProgressBarNotThePerson = percent(curr, l.count());
