@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "43067881628",
+    "project_id": "spokenli",
+    "storage_bucket": "spokenli.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43067881628:android:e95aee013960d4ea5d9559",
+        "android_client_info": {
+          "package_name": "com.example.prototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43067881628-e92rmopaedft0vmjvmm97v1gi74j07e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb7fjcLGD2hHdqMDTYQY_p94j6NJ3Ghsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43067881628-e92rmopaedft0vmjvmm97v1gi74j07e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
