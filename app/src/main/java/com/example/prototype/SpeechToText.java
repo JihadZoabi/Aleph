@@ -35,7 +35,9 @@ public class SpeechToText {
         public void onBeginningOfSpeech() {}
         public void onBufferReceived(byte[] buffer) {}
         public void onEndOfSpeech() {}
-        public void onError(int error) {}
+        public void onError(int error) {
+            Log.d("STT", "Error: " + error);
+        }
         public void onEvent(int eventType, Bundle params) {}
         public void onPartialResults(Bundle partialResults) {}
         public void onReadyForSpeech(Bundle params) {
