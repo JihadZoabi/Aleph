@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -29,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText passwordText;
     Button loginBtn;
 
+    TextView toSignup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,22 @@ public class LoginActivity extends AppCompatActivity {
         emailText = findViewById(R.id.email);
         passwordText = findViewById(R.id.password);
         loginBtn = findViewById(R.id.login_button);
+        toSignup = findViewById(R.id.toSignup);
+
+        toSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            }
+        });
+
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
