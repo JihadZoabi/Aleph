@@ -10,10 +10,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
         android:layout_above="@+id/signout_button"
         android:layout_centerHorizontal="true"
-        android:textSize="20dp"/>
+        android:text="Hello"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:id="@+id/greeting"/>
     <Button
         android:id="@+id/signout_button"
         android:layout_width="wrap_content"
