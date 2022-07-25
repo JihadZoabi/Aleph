@@ -21,7 +21,7 @@ public class SpeechToText {
         i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.forLanguageTag("he"));
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL" /* Locale.forLanguageTag("es") */);
     }
     public void start() {
         s.startListening(i);
