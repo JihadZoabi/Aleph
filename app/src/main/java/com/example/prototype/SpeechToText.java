@@ -13,6 +13,8 @@ import android.util.Log;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 
 public class SpeechToText {
@@ -25,7 +27,7 @@ public class SpeechToText {
         i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL" /* Locale.forLanguageTag("es") */);
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL");
     }
     public void start(Consumer<String> c) {
         s.startListening(i);
@@ -33,11 +35,21 @@ public class SpeechToText {
         final Handler h = new Handler();
         Log.d("STT", "start");
     }
+    public String listen() {
+        Lock l = new ReentrantLock();
+        String[] str = new String[1];
+        l.lock();
+        start(s -> {
+            str[0] = s;
+            l.unlock();
+        });
+        l.lock();
+        return str[0];
+    }
     public void destroy() {
         s.destroy();
     }
     private class RL implements RecognitionListener {
-
         public void onBeginningOfSpeech() {
             /* Message to the user to begin. */
         }
@@ -104,6 +116,7 @@ public class SpeechToText {
             List<String> data =
                     res.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
             consume.accept(data.get(0));
+            s.stopListening();
         }
     }
 }
