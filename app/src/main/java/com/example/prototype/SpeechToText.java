@@ -11,10 +11,12 @@ import android.util.Log;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 public class SpeechToText {
     private SpeechRecognizer s;
     private Intent i;
+    private Consumer<String> consume;
     public SpeechToText(Context c) {
         s = SpeechRecognizer.createSpeechRecognizer(c);
         s.setRecognitionListener(new RL());
@@ -23,8 +25,9 @@ public class SpeechToText {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL" /* Locale.forLanguageTag("es") */);
     }
-    public void start() {
+    public void start(Consumer<String> c) {
         s.startListening(i);
+        consume = c;
         final Handler h = new Handler();
         Log.d("STT", "start");
     }
@@ -61,7 +64,7 @@ public class SpeechToText {
         public void onResults(Bundle res) {
             List<String> data =
                     res.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-            Log.d("STT", data.get(0));
+            consume.accept(data.get(0));
         }
     }
 }
