@@ -1,12 +1,14 @@
 package com.example.prototype;
 
+import static android.speech.SpeechRecognizer.*;
+import static android.speech.SpeechRecognizer.createSpeechRecognizer;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.RecognitionListener;
-import android.speech.RecognizerIntent;
-import android.speech.SpeechRecognizer;
+import android.speech.RecognizerIntent;import android.speech.SpeechRecognizer;
 import android.util.Log;
 
 import java.util.List;
@@ -35,6 +37,7 @@ public class SpeechToText {
         s.destroy();
     }
     private class RL implements RecognitionListener {
+
         public void onBeginningOfSpeech() {
             /* Message to the user to begin. */
         }
@@ -47,8 +50,44 @@ public class SpeechToText {
             */
         }
         public void onError(int error) {
-            Log.d("STT", "Error: " + error);
+            switch (error) {
+                case ERROR_AUDIO:
+                    Log.d("SST_ERROR","Audio recording error.");
+                    break;
+                case 14:
+                    //ERROR_CANNOT_CHECK_SUPPORT
+                    Log.d("SST_ERROR","The service does not allow to check for support.");
+                    break;
+                case ERROR_CLIENT:
+                    Log.d("SST_ERROR","Other client side errors.");
+                    break;
+                case ERROR_INSUFFICIENT_PERMISSIONS:
+                    Log.d("SST_ERROR","Insufficient permissions");
+                    break;
+                case ERROR_LANGUAGE_NOT_SUPPORTED:
+                    Log.d("SST_ERROR","Requested language is not available to be used with the current recognizer.");
+                    break;
+                case ERROR_LANGUAGE_UNAVAILABLE:
+                    Log.d("SST_ERROR","Requested language is supported, but not available currently");
+                    break;
+                case ERROR_NETWORK:
+                    Log.d("SST_ERROR","Other network related errors.");
+                    break;
+                case ERROR_TOO_MANY_REQUESTS:
+                    Log.d("SST_ERROR","Too many requests from the same client.");
+                    break;
+                case ERROR_SERVER:
+                    Log.d("SST_ERROR","Server sends error status.");
+                    break;
+                case ERROR_NO_MATCH:
+                    Log.d("SST_ERROR","No recognition result matched.");
+                    break;
+                case ERROR_NETWORK_TIMEOUT:
+                    Log.d("SST_ERROR","Network operation timed out.");
+                    break;
+            }
         }
+
         public void onEvent(int eventType, Bundle params) {}
         public void onPartialResults(Bundle partialResults) {
             /* Maybe figure out when this happens.
