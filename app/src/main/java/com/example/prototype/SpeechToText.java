@@ -32,14 +32,26 @@ public class SpeechToText {
         s.destroy();
     }
     private class RL implements RecognitionListener {
-        public void onBeginningOfSpeech() {}
-        public void onBufferReceived(byte[] buffer) {}
-        public void onEndOfSpeech() {}
+        public void onBeginningOfSpeech() {
+            /* Message to the user to begin. */
+        }
+        public void onBufferReceived(byte[] buffer) {
+            /* DO NOT TOUCH */
+        }
+        public void onEndOfSpeech() {
+            /* IDK what's the relationship of this
+               to other methods temporally.
+            */
+        }
         public void onError(int error) {
             Log.d("STT", "Error: " + error);
         }
         public void onEvent(int eventType, Bundle params) {}
-        public void onPartialResults(Bundle partialResults) {}
+        public void onPartialResults(Bundle partialResults) {
+            /* Maybe figure out when this happens.
+               If we only want one word maybe this has value.
+             */
+        }
         public void onReadyForSpeech(Bundle params) {
             Log.d("STT", "ready");
         }
