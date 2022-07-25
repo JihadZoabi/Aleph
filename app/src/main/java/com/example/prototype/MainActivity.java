@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.prototype.databinding.ActivityMainBinding;
 import com.example.prototype.fragments.CartFragment;
@@ -21,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Lessons.init(getResources());
         SpeechToText s = new SpeechToText(this);
-        s.start();
+        s.start(result -> {
+            Log.d("STT", result);
+        });
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
