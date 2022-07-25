@@ -15,8 +15,7 @@ import com.example.prototype.fragments.LeaderBoardFragment;
 import com.example.prototype.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
-   private ActivityMainBinding binding;
-
+    private ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
