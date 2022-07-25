@@ -52,21 +52,9 @@ public class SignupActivity extends AppCompatActivity {
                 String password = passwordText.getText().toString();
 
                 if(!(email.length() < 1 || password.length() < 1)){
-                    registerUser(email, username,password);
+                    User user = new User(email, password, SignupActivity.this);
+                    user.registerUser(username);
                 }
-            }
-        });
-    }
-
-    private void registerUser(String _email, String _username,String _password){
-        mAuth.createUserWithEmailAndPassword(_email, _password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(SignupActivity.this, "Success!", Toast.LENGTH_SHORT).show();
-
-                User user = new User(ref, _username, mAuth.getUid(), _email);
-
-                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
             }
         });
     }

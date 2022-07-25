@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
         if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
@@ -61,7 +62,11 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginUser(emailText.getText().toString(), passwordText.getText().toString());
+                String email = emailText.getText().toString();
+                String password = passwordText.getText().toString();
+                User user = new User(email, password, LoginActivity.this);
+                user.loginUser();
+                //loginUser(emailText.getText().toString(), passwordText.getText().toString());
             }
         });
 
@@ -70,23 +75,5 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user){
         //TODO: make a useful updateUI function.
-    }
-
-    private void loginUser(String email, String password){
-        mAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                finish();
-            }
-        });
-        mAuth.signInWithEmailAndPassword(email, password).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 }
