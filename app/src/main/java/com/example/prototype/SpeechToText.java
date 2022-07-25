@@ -55,7 +55,9 @@ public class SpeechToText {
         public void onReadyForSpeech(Bundle params) {
             Log.d("STT", "ready");
         }
-        public void onRmsChanged(float rmsdB) {}
+        public void onRmsChanged(float rmsdB) {
+            /* Uninteresting */
+        }
         public void onResults(Bundle res) {
             List<String> data =
                     res.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
