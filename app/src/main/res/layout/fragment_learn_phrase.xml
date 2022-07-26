@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_background"
+    android:gravity="center"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:gravity="center">
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
 
 
     <View
@@ -25,7 +25,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <TextView
         android:id="@+id/meaningOfHebrewWordInArabic"
@@ -56,8 +56,8 @@
         android:id="@+id/HebrewWordInArabic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HebrewWordInArabic"
         android:layout_marginTop="20dp"
+        android:text="HebrewWordInArabic"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
@@ -67,8 +67,8 @@
         android:id="@+id/WordInHebrew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WordInHebrew"
         android:layout_marginTop="20dp"
+        android:text="WordInHebrew"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
         app:layout_constraintTop_toBottomOf="@+id/HebrewWordInArabic" />
@@ -77,10 +77,19 @@
         android:id="@+id/sound_wave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:src="@drawable/soundwave"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        android:layout_margin="8dp"
         app:layout_constraintTop_toBottomOf="@+id/WordInHebrew" />
 
+    <Button
+        android:id="@+id/micButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
