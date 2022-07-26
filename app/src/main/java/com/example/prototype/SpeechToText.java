@@ -12,9 +12,6 @@ import android.speech.RecognizerIntent;import android.speech.SpeechRecognizer;
 import android.util.Log;
 
 import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 
 public class SpeechToText {
@@ -36,7 +33,7 @@ public class SpeechToText {
         Log.d("STT", "start");
     }
     public String listen() {
-        Lock l = new ReentrantLock();
+        SpinLock l = new SpinLock();
         String[] str = new String[1];
         l.lock();
         start(s -> {

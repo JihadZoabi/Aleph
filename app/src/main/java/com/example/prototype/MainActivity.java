@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Lessons.init(getResources());
-        // SpeechToText s = new SpeechToText(this);
-        // Log.d("STT", s.listen());
+        super.onCreate(savedInstanceState);
+        Log.d("TestThing", "It works");
         TextToSound t = new TextToSound(this);
+        t.close();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
