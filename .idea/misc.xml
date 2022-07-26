@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/circle.xml" value="0.2595" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/horizontal_rect_yellow.xml" value="0.2595" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_image.xml" value="0.2595" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/rounded_rect_white.xml" value="0.2585" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />

@@ -14,10 +14,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        android:hint="email"/>
 
     <EditText
         android:id="@+id/password"
+        android:hint="password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"

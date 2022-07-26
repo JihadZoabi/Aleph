@@ -12,8 +12,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class User{
     private String username;
@@ -48,12 +51,14 @@ public class User{
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
+                ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                        .getReference("user/"+FirebaseAuth.getInstance().getUid());
                 Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
-                ref.child(FirebaseAuth.getInstance().getUid()).child("username").setValue(username);
-                ref.child(FirebaseAuth.getInstance().getUid()).child("xp").setValue(xp);
-                ref.child(FirebaseAuth.getInstance().getUid()).child("falafels").setValue(falafels);
-                ref.child(FirebaseAuth.getInstance().getUid()).child("progress").setValue(progress);
-                ref.child(FirebaseAuth.getInstance().getUid()).child("email").setValue(email);
+                ref.child("username").setValue(username);
+                ref.child("xp").setValue(xp);
+                ref.child("falafels").setValue(falafels);
+                ref.child("progress").setValue(progress);
+                ref.child("email").setValue(email);
                 context.startActivity(new Intent(context, LoginActivity.class));
             }
         });
@@ -84,8 +89,27 @@ public class User{
         ref.child("username").setValue(username);
     }
 
-    //TODO: function increase XP
-    public void increaseXP(){}
+    public void addXP(int amount){
+        this.xp += amount;
+        ref.child("xp").setValue(xp);
+    }
+
+    public static int getXP(String UID){
+        final int[] value = new int[1];
+        FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("user/"+UID+"/xp").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                value[0] = snapshot.getValue(int.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        return value[0];
+    }
 
 
 }

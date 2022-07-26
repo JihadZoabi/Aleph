@@ -1,7 +1,9 @@
 package com.example.prototype.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +37,9 @@ public class ProfileFragment extends Fragment {
     TextView userText;
     DatabaseReference ref;
     TextView greetingText;
+    TextView xpText;
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,6 +51,11 @@ public class ProfileFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/").getReference("user/");
+        xpText = v.findViewById(R.id.xp_text);
+
+        int xp = User.getXP(mAuth.getUid());
+        Log.d("xp", String.valueOf(xp));
+        xpText.setText("XP: "+ xp);
 
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +73,7 @@ public class ProfileFragment extends Fragment {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String value = snapshot.getValue(String.class);
                         greetingText.setText(value);
+
                     }
 
                     @Override
