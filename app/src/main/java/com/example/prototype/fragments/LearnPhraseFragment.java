@@ -11,7 +11,9 @@ import static android.speech.SpeechRecognizer.ERROR_NO_MATCH;
 import static android.speech.SpeechRecognizer.ERROR_SERVER;
 import static android.speech.SpeechRecognizer.ERROR_TOO_MANY_REQUESTS;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.Image;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
@@ -27,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.prototype.BadXML;
@@ -73,12 +76,16 @@ public class LearnPhraseFragment extends Fragment {
         pictureOfWord = (ImageView) v.findViewById(R.id.pictureOfWord);
         HebrewWordInArabic = (TextView) v.findViewById(R.id.HebrewWordInArabic);
         WordInHebrew = (TextView) v.findViewById(R.id.WordInHebrew);
-        micButton = v.findViewById(R.id.micButton);
+        micButton = (Button) v.findViewById(R.id.micButton);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
 
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(getActivity(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
+        }
 
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
@@ -176,7 +183,6 @@ public class LearnPhraseFragment extends Fragment {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 Log.d("SST","Hi");
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    speechRecognizer.destroy();
                     speechRecognizer.stopListening();
                 }
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){

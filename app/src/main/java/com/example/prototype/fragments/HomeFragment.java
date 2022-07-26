@@ -114,6 +114,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onEndOfSpeech() {
+                resultsTextView.setText("Listen");
                 Log.d("SST","VOICE ENDED");
             }
 
