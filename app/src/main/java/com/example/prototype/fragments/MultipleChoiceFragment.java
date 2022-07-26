@@ -1,12 +1,18 @@
 package com.example.prototype.fragments;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Vibrator;
+
 
 import androidx.fragment.app.Fragment;
 
@@ -23,6 +29,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Button mButtonChoice3;
     private Button mButtonChoice4;
     private String mAnswer;
+    private Vibrator mVibrator;
     private final MultipleChoice m;
     private final Lesson l;
 
@@ -47,6 +54,8 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         mButtonChoice2 = (Button) v.findViewById(R.id.choice2);
         mButtonChoice3 = (Button) v.findViewById(R.id.choice3);
         mButtonChoice4 = (Button) v.findViewById(R.id.choice4);
+        mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+
         mButtonChoice1.setOnClickListener(this);
         mButtonChoice2.setOnClickListener(this);
         mButtonChoice3.setOnClickListener(this);
@@ -92,6 +101,14 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
             } else {
                 //TODO if wrong.
                 Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    Log.d("JIHAD'S SHITTY CODE","HERE");
+                    mVibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    //deprecated in API 26
+                    Log.d("JIHAD'S SHITTY CODE","HERE2");
+                    mVibrator.vibrate(500);
+                }
             }
         }
     }
