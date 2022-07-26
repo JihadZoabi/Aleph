@@ -100,7 +100,7 @@ public class User{
                 .getReference("user/"+UID+"/xp").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                value[0] = snapshot.getValue(int.class);
+                value[0] = snapshot.getValue(Integer.class);
             }
 
             @Override
@@ -110,6 +110,5 @@ public class User{
         });
         return value[0];
     }
-
 
 }
