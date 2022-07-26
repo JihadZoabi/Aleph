@@ -88,7 +88,7 @@ public class LearnPhraseFragment extends Fragment {
 
             @Override
             public void onBeginningOfSpeech() {
-                Log.d("SST","Listening...");
+                HebrewWordInArabic.setText("Listening...");
             }
 
             @Override

@@ -84,9 +84,6 @@ public class HomeFragment extends Fragment {
             Toast.makeText(getActivity(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
             checkPermission();
         }
-        else {
-            Toast.makeText(getActivity(), "PERMISSIONS", Toast.LENGTH_SHORT).show();
-        }
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
 
