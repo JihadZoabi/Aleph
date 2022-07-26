@@ -11,6 +11,6 @@
           android:icon="@drawable/ic_baseline_leaderboard_24"
           android:id="@+id/leaderBoardItem"/>
     <item android:title="Profile"
-          android:icon="@drawable/ic_baseline_account_circle_24"
+          android:icon="@drawable/profile"
           android:id="@+id/profileItem"/>
 </menu>

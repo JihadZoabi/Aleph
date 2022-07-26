@@ -16,11 +16,15 @@ public class LessonFinishActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_finish);
         returnBtn = findViewById(R.id.returnBtn);
+
+        Bundle bundle = getIntent().getExtras();
+        int xpNumber = bundle.getInt("xp");
         xp = findViewById(R.id.xp);
-        xp.setText("");
+        xp.setText("+"+xpNumber);
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(LessonFinishActivity.this, MainActivity.class));
             }
         });

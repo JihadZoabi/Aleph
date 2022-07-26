@@ -10,39 +10,49 @@ import android.os.Handler;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;import android.speech.SpeechRecognizer;
 import android.util.Log;
+import android.widget.TextView;
+
+import com.example.prototype.fragments.HomeFragment;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 
 public class SpeechToText {
     private SpeechRecognizer s;
     private Intent i;
     private Consumer<String> consume;
-    public SpeechToText(Context c) {
+    private TextView tv;
+    public SpeechToText(Context c, TextView tv) {
         s = SpeechRecognizer.createSpeechRecognizer(c);
         s.setRecognitionListener(new RL());
         i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL");
+        this.tv = tv;
     }
-    public void start(Consumer<String> c) {
+    public void start() {
         s.startListening(i);
-        consume = c;
         final Handler h = new Handler();
         Log.d("STT", "start");
     }
-    public String listen() {
-        SpinLock l = new SpinLock();
-        String[] str = new String[1];
-        l.lock();
-        start(s -> {
-            str[0] = s;
-            l.unlock();
-        });
-        l.lock();
-        return str[0];
-    }
+//
+//    public String listen() {
+//        Lock l = new ReentrantLock();
+//        String[] str = new String[1];
+//        l.lock();
+//        start(s -> {
+//            str[0] = s;
+//            l.unlock();
+//        });
+//        l.lock();
+//        return str[0];
+//    }
     public void destroy() {
         s.destroy();
     }
@@ -110,9 +120,9 @@ public class SpeechToText {
             /* Uninteresting */
         }
         public void onResults(Bundle res) {
-            List<String> data =
-                    res.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+            List<String> data = res.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
             consume.accept(data.get(0));
+            tv.setText(data.get(0));
             s.stopListening();
         }
     }
