@@ -1,6 +1,5 @@
 package com.example.prototype.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +38,6 @@ public class ProfileFragment extends Fragment {
     TextView greetingText;
     TextView xpText;
 
-    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public class ProfileFragment extends Fragment {
 
         int xp = User.getXP(mAuth.getUid());
         Log.d("xp", String.valueOf(xp));
-        xpText.setText("XP: "+ xp);
+        xpText.setText("XP: "+ String.valueOf(xp));
 
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
