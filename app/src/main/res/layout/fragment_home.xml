@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".fragments.HomeFragment">
 
     <RelativeLayout
@@ -19,11 +20,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/short_stack"
                 android:text="Welcome Back!"
                 android:textColor="@color/black"
-                android:layout_centerInParent="true"
-                android:fontFamily="@font/short_stack" />
+                android:textSize="20sp" />
 
             <ImageView
                 android:layout_width="50dp"
@@ -76,16 +77,16 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarSport"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:indeterminate="false"
                     android:layout_marginRight="20dp"
-                    android:foregroundGravity="left"
-                    android:progressDrawable="@drawable/circular_progress_bar"
                     android:background="@drawable/circle_shape"
-                    style="?android:attr/progressBarStyleHorizontal"
+                    android:foregroundGravity="left"
+                    android:indeterminate="false"
                     android:max="100"
-                    android:progress="65" />
+                    android:progress="65"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -127,16 +128,16 @@
 
                 <ProgressBar
                     android:id="@+id/progressBarFood"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:indeterminate="false"
                     android:layout_marginRight="20dp"
-                    android:foregroundGravity="left"
-                    android:progressDrawable="@drawable/circular_progress_bar"
                     android:background="@drawable/circle_shape"
-                    style="?android:attr/progressBarStyleHorizontal"
+                    android:foregroundGravity="left"
+                    android:indeterminate="false"
                     android:max="100"
-                    android:progress="50" />
+                    android:progress="50"
+                    android:progressDrawable="@drawable/circular_progress_bar" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -241,6 +242,27 @@
                     android:progressDrawable="@drawable/circular_progress_bar" />
             </LinearLayout>
         </RelativeLayout>
+
+
+
+        <Button
+                android:id="@+id/speak_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TransportRect"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:text="Speak!" />
+
+        <TextView
+                android:id="@+id/speak_results"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Results"
+                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/speak_button"
+                android:textSize="20sp" />
 
     </RelativeLayout>
 
