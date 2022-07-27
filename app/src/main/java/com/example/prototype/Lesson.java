@@ -17,7 +17,7 @@ public class Lesson {
         return xp;
     }
 
-    public int getCorrects() {
+    public int getCorrect() {
         return correct;
     }
 
