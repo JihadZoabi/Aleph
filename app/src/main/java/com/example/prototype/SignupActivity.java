@@ -43,7 +43,6 @@ public class SignupActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/").getReference("user/");
 
-
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +50,7 @@ public class SignupActivity extends AppCompatActivity {
                 String username = usernameText.getText().toString();
                 String password = passwordText.getText().toString();
 
-                if(!(email.length() < 1 || password.length() < 1)){
+                if (email.length() >= 1 && password.length() >= 1) {
                     User user = new User(email, password, SignupActivity.this);
                     user.registerUser(username);
                 }

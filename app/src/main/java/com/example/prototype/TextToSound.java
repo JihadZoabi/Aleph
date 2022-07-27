@@ -13,25 +13,30 @@ public class TextToSound {
     private TextToSpeech t;
     private EditText write;
     public TextToSound(Context c) {
-        //final Semaphore l = new Semaphore(0);
+        /* final LockThatLocks l = new LockThatLocks();
+        l.lock(); */
         Log.d("NewTitle", "really?");
-        t = new TextToSpeech(c, status -> {
-            if (status == TextToSpeech.SUCCESS) {
-                Log.d("NewTitle", "Nice");
-                t.setLanguage(Locale.forLanguageTag("en-US"));
-                //l.release();
-            } else {
-                Log.d("NewTitle", "We're fucked");
-            }
+        t = new TextToSpeech(c, s -> {
+            if (s != TextToSpeech.SUCCESS)
+                Log.d("INIT", "What's happening");
+            Log.d("INIT", "I am not running");
+            t.setLanguage(Locale.forLanguageTag("he-IL"));
+            //l.unlock();
+            t.speak("אייל זה עובד", TextToSpeech.QUEUE_FLUSH, null, null);
         });
+        // Stop
+
         Log.d("NewTitle", "this can't be right ");
         /*try { l.acquire(); } catch (Exception e) {
             Log.d("NewTitle", "Seriously");
         }*/
-        try { Thread.sleep(3_000); }
-        catch (Exception e) {}
+        //try { Thread.sleep(10_000); }
+        //catch (Exception e) {}
+        Log.d("INIT", "reached");
+        //l.lock();
+
         Log.d("NewTitle", "I am reached");
-        t.speak("Jihad we're not moving", TextToSpeech.QUEUE_ADD, null, null);
+
     }
     public void close() {
         t.shutdown();

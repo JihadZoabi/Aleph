@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Lessons.init(getResources());
         super.onCreate(savedInstanceState);
-        Log.d("TestThing", "It works");
-        TextToSound t = new TextToSound(this);
-        t.close();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());

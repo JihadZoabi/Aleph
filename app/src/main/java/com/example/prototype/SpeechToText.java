@@ -41,18 +41,6 @@ public class SpeechToText {
         final Handler h = new Handler();
         Log.d("STT", "start");
     }
-//
-//    public String listen() {
-//        Lock l = new ReentrantLock();
-//        String[] str = new String[1];
-//        l.lock();
-//        start(s -> {
-//            str[0] = s;
-//            l.unlock();
-//        });
-//        l.lock();
-//        return str[0];
-//    }
     public void destroy() {
         s.destroy();
     }
@@ -106,7 +94,6 @@ public class SpeechToText {
                     break;
             }
         }
-
         public void onEvent(int eventType, Bundle params) {}
         public void onPartialResults(Bundle partialResults) {
             /* Maybe figure out when this happens.
