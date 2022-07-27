@@ -66,7 +66,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
                 LessonActivity.revealButton();
                 l.gotCorrect(f);
             } else {
-                Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
             }
         }
     }
