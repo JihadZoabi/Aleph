@@ -51,9 +51,18 @@ public class ProfileFragment extends Fragment {
         ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/").getReference("user/");
         xpText = v.findViewById(R.id.xp_text);
 
-        int xp = User.getXP(mAuth.getUid());
-        Log.d("xp", String.valueOf(xp));
-        xpText.setText("XP: "+ String.valueOf(xp));
+        FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("user/"+mAuth.getUid()+"/xp").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                xpText.setText("XP: "+ snapshot.getValue(int.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
