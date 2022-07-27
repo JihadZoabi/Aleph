@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordText;
     private Button loginBtn;
 
-    TextView toSignup;
+    private TextView toSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
