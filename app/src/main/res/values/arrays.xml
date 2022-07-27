@@ -295,16 +295,16 @@
     </array>
     <array name="l4q3">
         <item>LearnPhrase</item>
-        <item>متى </item>
+        <item>متى سيصل الباص؟</item>
         <!-- Up is the meaning in Arabic-->
         <item>2</item>
         <!--        Up is XP -->
         <item>0</item>
         <!--  Up is correctIndex      -->
         <item>https://i.imgur.com/OtDfNmv.png</item>
-        <item>ايخ اني ماجيع ايل</item>
+        <item>متاي يجيع ها اوتوبوس</item>
         <!--       Up is Hebrew word written in Arabic-->
-        <item>איך אני מגיע אל</item>
+        <item>מתי יגיע האוטובוס</item>
         <!-- Up is Hebrew word written in Hebrew -->
     </array>
 </resources>
