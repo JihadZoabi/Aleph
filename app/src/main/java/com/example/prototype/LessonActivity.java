@@ -32,8 +32,9 @@ public class LessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
         continueBtn = findViewById(R.id.continueBtn);
+        Bundle bundle = getIntent().getExtras();
         barButTheProgressBarNotThePerson = findViewById(R.id.lesson_progress);
-        l = Lessons.get("lessonName");
+        l = Lessons.get(bundle.getString("LessonName"));
         curr = 0;
         e = getSharedPreferences("history", Context.MODE_PRIVATE).edit();
         continueBtn.setOnClickListener(view -> advance());

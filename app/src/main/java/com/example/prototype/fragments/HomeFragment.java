@@ -62,13 +62,17 @@ public class HomeFragment extends Fragment {
         sportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), LessonActivity.class));
-            }
+                Intent i = new Intent(getActivity(), LessonActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("LessonName","Sport");
+                i.putExtras(bundle);
+                startActivity(i);            }
         });
 
         foodRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(getActivity(), FoodActivity.class));
             }
         });
@@ -76,7 +80,11 @@ public class HomeFragment extends Fragment {
         schoolRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "BOO", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(), LessonActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("LessonName","Greetings");
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
 
