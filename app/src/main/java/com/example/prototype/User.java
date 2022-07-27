@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.airbnb.lottie.L;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.concurrent.locks.Lock;
 
 public class User{
     private String username;
@@ -94,22 +97,19 @@ public class User{
         ref.child("xp").setValue(xp);
     }
 
-//    public static int getXP(String UID){
-//        final int[] value = new int[1];
-//        FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
-//                .getReference("user/"+UID+"/xp").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                value[0] = ;
-//                Log.d("xp1", String.valueOf(snapshot.getValue(int.class)));
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        return 0;
-//    }
+    public static int getXP(String UID){
+        final int[] value = new int[1];
+        FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("user/"+UID+"/xp").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                value[0] = snapshot.getValue(Integer.class);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {}
+        });
+        Log.d("XP", ": " + value[0]);
+        return value[0];
+    }
+
 }

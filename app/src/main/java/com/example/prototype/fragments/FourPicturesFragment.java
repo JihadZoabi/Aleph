@@ -1,6 +1,10 @@
 package com.example.prototype.fragments;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +28,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     private ImageView waveSound;
     private final FourPictures f;
     private final Lesson l;
+    private Vibrator mVibrator;
 
     public FourPicturesFragment(Lesson l, FourPictures f){
         this.l = l;
@@ -36,6 +41,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
         View v = inflater.inflate(R.layout.fragment_four_pictures, container, false);
         Picasso.get().setLoggingEnabled(true);
         questionText = v.findViewById(R.id.fourPicturesQuestion);
+        mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         waveSound = v.findViewById(R.id.sound_wave);
         imageChoices[0] = (ImageView) v.findViewById(R.id.imageTopRight);
         imageChoices[1] = (ImageView) v.findViewById(R.id.imageBottomRight);
@@ -66,8 +72,15 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
                 LessonActivity.revealButton();
                 l.gotCorrect(f);
             } else {
-                Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "InCorrect!", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    mVibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+                } else {
+                    //deprecated in API 26
+                    mVibrator.vibrate(500);
+                }
             }
+
         }
     }
 }
