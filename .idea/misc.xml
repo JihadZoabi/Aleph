@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/border_image_four_pictures.xml" value="0.2355" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/circle.xml" value="0.2595" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/custom_input.xml" value="0.232" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/horizontal_rect_yellow.xml" value="0.2595" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.232" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_baseline_leaderboard_24.xml" value="0.2355" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.232" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_image.xml" value="0.2595" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_image2.xml" value="0.1975" />
@@ -21,6 +23,7 @@
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_signup2.xml" value="0.2" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_complete_sentence.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_leaderboard.xml" value="0.23143115942028986" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/slide_layout.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
