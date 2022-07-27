@@ -4,6 +4,7 @@
         <item>@array/l1</item>
         <item>@array/l2</item>
         <item>@array/l3</item>
+        <item>@array/l4</item>
     </array>
     <array name="l1">
         <item>Sport</item>
@@ -31,6 +32,12 @@
         <item>@array/l3q3</item>
         <item>@array/l3q4</item>
         <item>@array/l3q5</item>
+    </array>
+    <array name="l4">
+        <item>Transport</item>
+        <item>@array/l4q1</item>
+        <item>@array/l4q2</item>
+        <item>@array/l4q3</item>
     </array>
     <array name="l1q1">
         <item>LearnPhrase</item>
@@ -230,8 +237,8 @@
     <array name="l3q4">
         <item>MultipleChoice</item>
         <item>اين تستطيع ان تطلب الطعام؟</item>
-        <item>0</item>
         <item>2</item>
+        <item>0</item>
         <item>مسعادا</item>
         <item>بوكر توف</item>
         <item>شالوم</item>
@@ -239,12 +246,65 @@
     <array name="l3q5">
         <item>MultipleChoice</item>
         <item>ما معنى كلمة صحن؟</item>
-        <item>0</item>
         <item>2</item>
+        <item>0</item>
         <item>تسلاخت</item>
         <item>لهيترؤوت</item>
         <item>مسعادا</item>
-        <item></item>
     </array>
 
+    <array name="l4q1">
+        <item>LearnPhrase</item>
+        <item>باص (حافلة)</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/SXmFG7v.png</item>
+        <item>اوتوبوس</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>אוטובוס</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="l4q2">
+        <item>LearnPhrase</item>
+        <item>كيف اصل الى؟</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/OtDfNmv.png</item>
+        <item>ايخ اني ماجيع ايل</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>איך אני מגיע אל</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+        <item>LearnPhrase</item>
+        <item>كيف اصل الى؟</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/OtDfNmv.png</item>
+        <item>ايخ اني ماجيع ايل</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>איך אני מגיע אל</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="l4q3">
+        <item>LearnPhrase</item>
+        <item>متى </item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/OtDfNmv.png</item>
+        <item>ايخ اني ماجيع ايل</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>איך אני מגיע אל</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
 </resources>
