@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         Lessons.init(getResources());
         super.onCreate(savedInstanceState);
         TextToAzure t = new TextToAzure(getResources());
-        t.speak("אייל קוראים לו ג׳יהאד");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());

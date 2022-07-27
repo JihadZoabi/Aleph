@@ -6,8 +6,10 @@ public class Lesson {
     private final Question[] qs;
     private final String name;
     private int xp = 0;
+    private int correct = 0;
 
     public void reset() {
+        correct = 0;
         xp = 0;
     }
 
@@ -15,8 +17,13 @@ public class Lesson {
         return xp;
     }
 
+    public int getCorrect() {
+        return correct;
+    }
+
     public void gotCorrect(Question q) {
         xp += q.getXP();
+        ++correct;
     }
 
     @NonNull
