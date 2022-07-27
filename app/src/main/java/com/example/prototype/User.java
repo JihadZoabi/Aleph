@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.airbnb.lottie.L;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.concurrent.locks.Lock;
 
 public class User{
     private String username;
@@ -102,12 +105,10 @@ public class User{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 value[0] = snapshot.getValue(Integer.class);
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
+        Log.d("XP", ": " + value[0]);
         return value[0];
     }
 
