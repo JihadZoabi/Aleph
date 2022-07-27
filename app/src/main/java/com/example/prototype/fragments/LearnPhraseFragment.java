@@ -38,6 +38,7 @@ import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
+import com.example.prototype.TextToAzure;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
@@ -55,6 +56,8 @@ public class LearnPhraseFragment extends Fragment {
     private SpeechRecognizer speechRecognizer;
     private final LearnPhrase lp;
     private final Lesson l;
+    private ImageView soundVoice;
+    private TextToAzure tta;
 
     public LearnPhraseFragment(Lesson l, LearnPhrase lp){
         this.l = l;
@@ -77,7 +80,9 @@ public class LearnPhraseFragment extends Fragment {
         HebrewWordInArabic = (TextView) v.findViewById(R.id.HebrewWordInArabic);
         WordInHebrew = (TextView) v.findViewById(R.id.WordInHebrew);
         micButton = (Button) v.findViewById(R.id.micButton);
+        soundVoice = (ImageView) v.findViewById(R.id.sound_wave);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
+        tta = new TextToAzure(getResources());
 
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -86,6 +91,14 @@ public class LearnPhraseFragment extends Fragment {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
             Toast.makeText(getActivity(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
         }
+
+        soundVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("JIHAD","YAY");
+                tta.speak(lp.getAnswers()[2]);
+            }
+        });
 
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
