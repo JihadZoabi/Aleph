@@ -2,6 +2,7 @@ package com.example.prototype;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,11 +30,12 @@ public class SignupActivity extends AppCompatActivity {
             String email = emailText.getText().toString();
             String username = usernameText.getText().toString();
             String password = passwordText.getText().toString();
-
             if (email.length() >= 1 && password.length() >= 1) {
                 User user = User.register(this, username, email, password,
                         e -> Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show());
+                user.logIn(MainActivity.class);
             }
+            Toast.makeText(this, "Please enter required fields.", Toast.LENGTH_SHORT).show();
         });
     }
 }

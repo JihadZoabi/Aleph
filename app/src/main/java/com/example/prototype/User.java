@@ -1,5 +1,6 @@
 package com.example.prototype;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
@@ -15,12 +16,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-public class User {
+public class User implements Serializable {
     private String username;
     private String userID;
     private List<String> progress;
@@ -33,6 +35,12 @@ public class User {
     private FirebaseAuth auth;
     private Context context;
     private FirebaseDatabase db;
+
+    public<T extends Activity> void logIn(Class<T> activity) {
+        Intent i = new Intent(context, activity);
+        i.putExtra("user", this);
+        context.startActivity(i);
+    }
 
     public List<String> getProgress() { // maybe shouldn't copy
         return new ArrayList<String>(progress);

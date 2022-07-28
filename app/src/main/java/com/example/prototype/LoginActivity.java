@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = passwordText.getText().toString();
             User user = User.login(this, email, password,
                     e -> Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show());
+            user.logIn(MainActivity.class);
         });
     }
 }
