@@ -83,11 +83,11 @@
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
         app:layout_constraintTop_toBottomOf="@+id/WordInHebrew" />
 
-    <Button
+    <ImageView
         android:id="@+id/micButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Record"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/microphone_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

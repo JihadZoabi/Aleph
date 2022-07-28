@@ -51,7 +51,7 @@ public class LearnPhraseFragment extends Fragment {
     private ImageView pictureOfWord;
     private TextView HebrewWordInArabic;
     private TextView WordInHebrew;
-    private Button micButton;
+    private ImageView micButton;
     private final Integer RecordAudioRequestCode = 1;
     private SpeechRecognizer speechRecognizer;
     private final LearnPhrase lp;
@@ -79,14 +79,14 @@ public class LearnPhraseFragment extends Fragment {
         pictureOfWord = (ImageView) v.findViewById(R.id.pictureOfWord);
         HebrewWordInArabic = (TextView) v.findViewById(R.id.HebrewWordInArabic);
         WordInHebrew = (TextView) v.findViewById(R.id.WordInHebrew);
-        micButton = (Button) v.findViewById(R.id.micButton);
+        micButton = (ImageView) v.findViewById(R.id.micButton);
         soundVoice = (ImageView) v.findViewById(R.id.sound_wave);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
         tta = new TextToAzure(getResources());
 
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "he-IL");
 
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
             Toast.makeText(getActivity(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
@@ -95,7 +95,6 @@ public class LearnPhraseFragment extends Fragment {
         soundVoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("JIHAD","YAY");
                 tta.speak(lp.getAnswers()[2]);
             }
         });
@@ -197,8 +196,10 @@ public class LearnPhraseFragment extends Fragment {
                 Log.d("SST","Hi");
                 if (motionEvent.getAction() == MotionEvent.ACTION_UP){
                     speechRecognizer.stopListening();
+                    micButton.setImageResource(R.drawable.microphone_up);
                 }
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    micButton.setImageResource(R.drawable.microphone_down);
                     speechRecognizer.startListening(speechRecognizerIntent);
                 }
                 return false;
