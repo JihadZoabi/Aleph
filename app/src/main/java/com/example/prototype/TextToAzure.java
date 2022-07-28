@@ -27,7 +27,6 @@ public class TextToAzure {
             } else if (speechRecognitionResult.getReason() == ResultReason.Canceled) {
                 SpeechSynthesisCancellationDetails cancellation = SpeechSynthesisCancellationDetails.fromResult(speechRecognitionResult);
                 System.out.println("CANCELED: Reason=" + cancellation.getReason());
-
                 if (cancellation.getReason() == CancellationReason.Error) {
                     System.out.println("CANCELED: ErrorCode=" + cancellation.getErrorCode());
                     System.out.println("CANCELED: ErrorDetails=" + cancellation.getErrorDetails());
