@@ -31,9 +31,10 @@ public class SignupActivity extends AppCompatActivity {
             String username = usernameText.getText().toString();
             String password = passwordText.getText().toString();
             if (email.length() >= 1 && password.length() >= 1) {
-                User user = User.register(this, username, email, password,
+                User.register(this, username, email, password,
                         e -> Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show());
-                user.logIn(MainActivity.class);
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
             }
             Toast.makeText(this, "Please enter required fields.", Toast.LENGTH_SHORT).show();
         });

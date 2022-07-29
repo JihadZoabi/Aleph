@@ -15,16 +15,13 @@ import com.example.prototype.fragments.LeaderBoardFragment;
 import com.example.prototype.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
-    private User user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Lessons.init(getResources());
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        user = (User) getIntent().getSerializableExtra("user");
+        User user = User.get();
         replaceFragment(new HomeFragment(user));
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -44,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
-
     private void replaceFragment (Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

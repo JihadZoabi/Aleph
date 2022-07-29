@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment {
 
         Intent i = new Intent(getActivity(), LessonActivity.class);
         Bundle bundle = new Bundle();
-        i.putExtra("user", user);
 
         class Handler implements View.OnClickListener {
             private String name;
@@ -70,7 +69,6 @@ public class HomeFragment extends Fragment {
             }
             public void onClick(View v) {
                 bundle.putString("LessonName", name);
-                i.putExtras(bundle);
                 startActivity(i);
             }
         }

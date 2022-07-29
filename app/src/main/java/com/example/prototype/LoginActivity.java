@@ -4,16 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class LoginActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
     private EditText emailText;
     private EditText passwordText;
     private Button loginBtn;
@@ -32,9 +28,10 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(view -> {
             String email = emailText.getText().toString();
             String password = passwordText.getText().toString();
-            User user = User.login(this, email, password,
+            User.login(this, email, password,
                     e -> Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show());
-            user.logIn(MainActivity.class);
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
         });
     }
 }

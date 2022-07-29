@@ -3,8 +3,6 @@ package com.example.prototype;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,7 +20,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-public class User implements Serializable {
+public class User {
     private String username;
     private String userID;
     private List<String> progress;
@@ -36,10 +34,10 @@ public class User implements Serializable {
     private Context context;
     private FirebaseDatabase db;
 
-    public<T extends Activity> void logIn(Class<T> activity) {
-        Intent i = new Intent(context, activity);
-        i.putExtra("user", this);
-        context.startActivity(i);
+    private static User last = null;
+
+    public static User get() {
+        return last;
     }
 
     public List<String> getProgress() { // maybe shouldn't copy
@@ -55,10 +53,10 @@ public class User implements Serializable {
         context = c;
         db = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/");
         progress = null;
-        progress = null;
         ref = null /* db.getReference() */;
-        auth = null /* FirebaseAuth.getInstance() */;
+        auth = FirebaseAuth.getInstance();
         userID = null /* auth.getUid() */;
+        last = this;
     }
 
     public void doneLesson(Lesson l) {

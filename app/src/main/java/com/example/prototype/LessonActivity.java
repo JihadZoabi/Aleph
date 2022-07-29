@@ -35,7 +35,7 @@ public class LessonActivity extends AppCompatActivity {
         barButTheProgressBarNotThePerson = findViewById(R.id.lesson_progress);
         l = Lessons.get(getIntent().getExtras().getString("LessonName"));
         continueBtn.setOnClickListener(view -> advance());
-        user = getIntent().getParcelableExtra("user");
+        user = User.get();
         curr = 0;
         advance();
     }
