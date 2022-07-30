@@ -27,79 +27,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.389" />
 
-    <TextView
-        android:id="@+id/meaningOfHebrewWordInArabic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:padding="8dp"
-        android:text="hebrewWordInArabic"
-        android:textColor="@color/black"
-        android:textFontWeight="300"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/rectangle_1"
-        app:layout_constraintStart_toStartOf="@id/rectangle_1"
-        app:layout_constraintTop_toTopOf="@id/rectangle_1" />
-
-
     <ImageView
-        android:id="@+id/pictureOfWord"
+        android:id="@+id/sadFace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sadface"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        app:layout_constraintTop_toBottomOf="@+id/meaningOfHebrewWordInArabic"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
     <TextView
-        android:id="@+id/HebrewWordInArabic"
+        android:id="@+id/ohSnapText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="HebrewWordInArabic"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        app:layout_constraintTop_toBottomOf="@+id/pictureOfWord" />
-
-    <TextView
-        android:id="@+id/WordInHebrew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="WordInHebrew"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        app:layout_constraintTop_toBottomOf="@+id/HebrewWordInArabic" />
-
-    <ImageView
-        android:id="@+id/sound_wave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:src="@drawable/soundwave"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        app:layout_constraintTop_toBottomOf="@+id/WordInHebrew" />
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/mic_circle"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_1">
+        android:text="Oh Snap!"
+        android:textSize="20sp"
+        android:textColor="@color/light_red"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/sadFace" />
 
-        <ImageView
-            android:id="@+id/micButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/microphone_up" />
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="You can still do it!"
+        android:textColor="@color/light_red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/ohSnapText" />
+
+    <View
+        android:id="@+id/wrong_rect"
+        android:layout_width="220dp"
+        android:layout_height="230dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/wrong_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/girl_skating"
+        app:layout_constraintEnd_toEndOf="@+id/wrong_rect"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/try_again_wrong"
+        android:text="Try Again"
+        android:textAlignment="center"
+        android:textColor="@color/light_red"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/wrong_rect"
+        app:layout_constraintStart_toStartOf="@+id/wrong_rect"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
