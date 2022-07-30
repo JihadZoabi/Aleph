@@ -15,19 +15,18 @@ import com.example.prototype.fragments.LeaderBoardFragment;
 import com.example.prototype.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Lessons.init(getResources());
         super.onCreate(savedInstanceState);
-        TextToAzure t = new TextToAzure(getResources());
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
+        User user = User.get();
+        replaceFragment(new HomeFragment(user));
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.homeItem:
-                    replaceFragment(new HomeFragment());
+                    replaceFragment(new HomeFragment(user));
                     break;
                 case R.id.cartItem:
                     replaceFragment(new CartFragment());
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
-
     private void replaceFragment (Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

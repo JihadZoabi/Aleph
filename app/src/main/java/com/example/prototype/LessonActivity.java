@@ -25,19 +25,18 @@ public class LessonActivity extends AppCompatActivity {
     private ProgressBar barButTheProgressBarNotThePerson;
     private Lesson l;
     private int curr;
-    private SharedPreferences.Editor e;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
         continueBtn = findViewById(R.id.continueBtn);
-        Bundle bundle = getIntent().getExtras();
         barButTheProgressBarNotThePerson = findViewById(R.id.lesson_progress);
-        l = Lessons.get(bundle.getString("LessonName"));
-        curr = 0;
-        e = getSharedPreferences("history", Context.MODE_PRIVATE).edit();
+        l = Lessons.get(getIntent().getExtras().getString("LessonName"));
         continueBtn.setOnClickListener(view -> advance());
+        user = User.get();
+        curr = 0;
         advance();
     }
 
@@ -49,8 +48,8 @@ public class LessonActivity extends AppCompatActivity {
         if (curr >= l.count()) {
             Intent i = new Intent(this, LessonFinishActivity.class);
             i.putExtra("xp", l.getXP());
+            user.doneLesson(l);
             startActivity(i);
-            e.putInt(l.getName() + " done", 1);
             return;
         }
         int progressForBarTheProgressBarNotThePerson = percent(curr, l.count());
@@ -59,21 +58,16 @@ public class LessonActivity extends AppCompatActivity {
             public void on(MultipleChoice m) {
                 showFragment(new MultipleChoiceFragment(l, m));
             }
-
             public void on(CompleteSentence c) {
                 showFragment(new CompleteSentenceFragment(l, c));
             }
-
             public void on(FourPictures f) {
                 showFragment(new FourPicturesFragment(l, f));
             }
-
             public void on(LearnPhrase lp) {
                 showFragment(new LearnPhraseFragment(l, lp));
             }
         });
-        e.putInt(l.getName(), l.getXP());
-        e.apply();
     }
 
     public void showFragment(Fragment fragment) {

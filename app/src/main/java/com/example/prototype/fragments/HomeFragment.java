@@ -26,6 +26,7 @@ import com.example.prototype.FoodActivity;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
 import com.example.prototype.SpeechToText;
+import com.example.prototype.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,11 @@ public class HomeFragment extends Fragment {
     private View transportRect;
     private final Integer RecordAudioRequestCode = 1;
     private SpeechRecognizer speechRecognizer;
+    private User user;
+
+    public HomeFragment(User u) {
+        user = u;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,69 +53,44 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         sportRect = v.findViewById(R.id.sportRect);
         foodRect = v.findViewById(R.id.foodRect);
         schoolRect = v.findViewById(R.id.SchoolRect);
         transportRect = v.findViewById(R.id.TransportRect);
 
+        Intent i = new Intent(getActivity(), LessonActivity.class);
+        Bundle bundle = new Bundle();
 
-        sportRect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), LessonActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Sport");
-                i.putExtras(bundle);
+        class Handler implements View.OnClickListener {
+            private String name;
+            public Handler(String n) {
+                name = n;
+            }
+            public void onClick(View v) {
+                bundle.putString("LessonName", name);
                 startActivity(i);
             }
-        });
+        }
 
-        foodRect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), LessonActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Food");
-                i.putExtras(bundle);
-                startActivity(i);
-            }
-        });
+        sportRect.setOnClickListener(new Handler("Sport"));
+        foodRect.setOnClickListener(new Handler("Food"));
+        schoolRect.setOnClickListener(new Handler("Greetings"));
+        transportRect.setOnClickListener(new Handler("Transport"));
 
-        schoolRect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), LessonActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Greetings");
-                i.putExtras(bundle);
-                startActivity(i);
-            }
-        });
-
-
-        transportRect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), LessonActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Transport");
-                i.putExtras(bundle);
-                startActivity(i);
-            }
-        });
-
-        if (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(getActivity(), "NO PERMISSIONS", Toast.LENGTH_SHORT).show();
             checkPermission();
         }
+
         return v;
     }
 
     private void checkPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.RECORD_AUDIO},RecordAudioRequestCode);
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[] { Manifest.permission.RECORD_AUDIO }, RecordAudioRequestCode);
         }
     }
 }
