@@ -100,11 +100,11 @@ public class User {
         User u = new User(email, "", password, c);
         u.auth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
+                    u.basicSetup();
                     u.<String>getField("progress", p -> {
                         u.progress = new ArrayList<String>(
                                 Arrays.asList(p.split("|")));
                     });
-                    u.basicSetup();
                     Toast.makeText(c, "Success", Toast.LENGTH_SHORT).show();
                     c.startActivity(new Intent(c, MainActivity.class));
                 }).addOnFailureListener(err::accept);
