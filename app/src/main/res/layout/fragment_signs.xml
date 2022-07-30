@@ -20,7 +20,8 @@
             android:layout_height="match_parent"
             android:layout_above="@id/arabicText"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/example_road_sign" />
+            android:src="@drawable/example_road_sign"
+            android:id="@+id/sign_image"/>
 
         <TextView
             android:id="@+id/arabicText"

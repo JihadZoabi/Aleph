@@ -1,0 +1,63 @@
+package com.example.prototype;
+
+import androidx.annotation.NonNull;
+
+import java.util.Arrays;
+
+public class Signs implements Question {
+
+    public Signs(String question, String signLink, int correct, int xp) {
+        this.question = question;
+        this.correct = correct;
+        this.xp = xp;
+    }
+
+    public Signs(String[] data) {
+        if (data.length != 7) // TODO: Adjust number?
+            throw new BadXML();
+        question = data[0];
+        correct = Integer.parseInt(data[1]);
+        xp = Integer.parseInt(data[2]);
+        //answers = Arrays.copyOfRange(data, 3, data.length);
+    }
+
+    protected String stringer() {
+        StringBuilder str = new StringBuilder(question +
+                " The correct answer is " + correct +
+                ".\nThe answers are:");
+        for (int i = 0; i < answers.length; ++i) {
+            str.append("\n").append(answers[i]);
+        }
+        return str.toString();
+    }
+
+    @NonNull
+    public String toString() {
+        return "FourPictures: " + stringer();
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public String[] getAnswers() {
+        return answers;
+    }
+
+    public int getCorrect() {
+        return correct;
+    }
+
+    public void use(Visitor v) {
+        v.on(this);
+    }
+
+    public int getXP() {
+        return xp;
+    }
+
+    private final int xp;
+    private final String question;
+    //private final String[] answers; TODO: change.
+    private final int correct;
+}
