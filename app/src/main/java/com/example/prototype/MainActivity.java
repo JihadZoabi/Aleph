@@ -22,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         User user = User.get();
-        replaceFragment(new HomeFragment(user));
+        HomeFragment.set(user);
+        replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.homeItem:
-                    replaceFragment(new HomeFragment(user));
+                    replaceFragment(new HomeFragment());
                     break;
                 case R.id.cartItem:
                     replaceFragment(new CartFragment());

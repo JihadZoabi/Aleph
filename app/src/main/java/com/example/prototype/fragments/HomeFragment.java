@@ -39,11 +39,13 @@ public class HomeFragment extends Fragment {
     private View transportRect;
     private final Integer RecordAudioRequestCode = 1;
     private SpeechRecognizer speechRecognizer;
-    private User user;
+    private static User user;
 
-    public HomeFragment(User u) {
+    public static void set(User u) {
         user = u;
     }
+
+    public HomeFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
