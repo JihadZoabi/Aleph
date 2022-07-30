@@ -34,7 +34,7 @@
         android:layout_marginTop="30dp"
         android:padding="8dp"
         android:text="hebrewWordInArabic"
-        android:textColor="#795F5F"
+        android:textColor="@color/black"
         android:textFontWeight="300"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/rectangle_1"
@@ -88,6 +88,7 @@
     <ImageView
         android:id="@+id/micButton"
         android:layout_width="85dp"
+        android:layout_marginTop="10dp"
         android:layout_height="85dp"
         android:src="@drawable/microphone_up"
         app:layout_constraintBottom_toBottomOf="parent"
