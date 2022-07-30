@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eyal Zauberman/AndroidStudioProjects/Aleph/app/src/main/res/layout/activity_story.xml" value="0.34739583333333335" />
         <entry key="..\:/Users/Eyal Zauberman/AndroidStudioProjects/Aleph/app/src/main/res/layout/fragment_complete_sentence.xml" value="0.4244791666666667" />
         <entry key="..\:/Users/Eyal Zauberman/AndroidStudioProjects/Aleph/app/src/main/res/layout/fragment_four_pictures.xml" value="0.4244791666666667" />
+        <entry key="..\:/Users/Eyal Zauberman/AndroidStudioProjects/Aleph/app/src/main/res/layout/fragment_multiple_choice.xml" value="0.34739583333333335" />
         <entry key="..\:/Users/Eyal Zauberman/AndroidStudioProjects/Aleph/app/src/main/res/layout/fragment_signs.xml" value="0.4244791666666667" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/border_image_four_pictures.xml" value="0.2355" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/circle.xml" value="0.2595" />
