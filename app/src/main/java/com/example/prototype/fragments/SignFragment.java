@@ -47,7 +47,7 @@ public class SignFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
+        View v = inflater.inflate(R.layout.activity_sign, container, false);
         mQuestionView = (TextView) v.findViewById(R.id.question);
         mButtonChoice1 = (Button) v.findViewById(R.id.choice1);
         mButtonChoice2 = (Button) v.findViewById(R.id.choice2);
