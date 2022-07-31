@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SignsFragment"
+    android:background="@color/purple_background"
+    android:padding="40dp">
+
+    <RelativeLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/four_pictures_rectangle"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/choice1"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_above="@id/choice2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:text="(הזית)"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/choice2"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_button"
+            android:padding="8dp"
+            android:text="(לב הכפר)"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/sign_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/arabicText"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/example_road_sign" />
+
+        <TextView
+            android:id="@+id/arabicText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/choice1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="القدس" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

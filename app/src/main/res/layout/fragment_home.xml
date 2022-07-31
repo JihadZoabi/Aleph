@@ -244,26 +244,6 @@
         </RelativeLayout>
 
 
-
-        <Button
-                android:id="@+id/speak_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/TransportRect"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="35dp"
-                android:text="Speak!" />
-
-        <TextView
-                android:id="@+id/speak_results"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Results"
-                android:layout_marginTop="12dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/speak_button"
-                android:textSize="20sp" />
-
     </RelativeLayout>
 
 </FrameLayout>
