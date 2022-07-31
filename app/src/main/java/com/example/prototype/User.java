@@ -1,12 +1,17 @@
 package com.example.prototype;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.airbnb.lottie.L;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,16 +19,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.function.Consumer;
+import java.util.concurrent.locks.Lock;
 
-public class User {
+public class User{
     private String username;
     private String userID;
-    private List<String> progress;
+    private String progress;
     private int xp;
     private int falafels;
     private String email;
@@ -32,106 +33,83 @@ public class User {
     private DatabaseReference ref;
     private FirebaseAuth auth;
     private Context context;
-    private FirebaseDatabase db;
 
-    private static User last = null;
-
-    public static User get() {
-        return last;
+    public User(String _email, String _password, Context _context){
+        this.email = _email;
+        this.password = _password;
+        this.auth = FirebaseAuth.getInstance();
+        this.context = _context;
+        this.userID = auth.getUid();
+        this.ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("user/");
     }
 
-    public List<String> getProgress() { // maybe shouldn't copy
-        return new ArrayList<String>(progress);
+    //TODO: Register function
+    public void registerUser(String _username){
+        this.falafels = 0;
+        this.xp = 0;
+        this.progress = "";
+        this.username = _username;
+
+        auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                        .getReference("user/"+FirebaseAuth.getInstance().getUid());
+                Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
+                ref.child("username").setValue(username);
+                ref.child("xp").setValue(xp);
+                ref.child("falafels").setValue(falafels);
+                ref.child("progress").setValue(progress);
+                ref.child("email").setValue(email);
+                context.startActivity(new Intent(context, LoginActivity.class));
+            }
+        });
+
+
+
     }
 
-    private User(String addr, String user, String pass, Context c) {
-        email = addr;
-        password = pass;
-        username = user;
-        xp = 0;
-        falafels = 0;
-        context = c;
-        db = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/");
-        progress = null;
-        ref = null /* db.getReference() */;
-        auth = FirebaseAuth.getInstance();
-        userID = null /* auth.getUid() */;
-        last = this;
+    //TODO: Login function
+    public void loginUser(){
+        this.auth.signInWithEmailAndPassword(this.email, this.password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, MainActivity.class));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    public void doneLesson(Lesson l) {
-        progress.add(l.getName());
-        setField("progress", String.join("|", progress));
-        xp += l.getXP();
-        setField("xp", xp);
+    //TODO: change username
+    public void changeUsername(String _username){
+        this.username = _username;
+        ref.child("username").setValue(username);
     }
 
-    public void getXP(Consumer<Integer> c) {
-        getField("xp", c);
+    public void addXP(int amount){
+        this.xp += amount;
+        ref.child("xp").setValue(xp);
     }
 
-    private void basicSetup() {
-        auth = FirebaseAuth.getInstance();
-        userID = auth.getUid();
-        ref = db.getReference("user/" + userID);
-    }
-
-    public static User register(Context c, String user, String email,
-                                String password, Consumer<Exception> err) {
-        User u = new User(email, user, password, c);
-        u.auth.createUserWithEmailAndPassword(email, password)
-                .addOnSuccessListener(authResult -> {
-                    u.basicSetup();
-                    u.progress = new ArrayList<String>();
-                    u.setField("progress", "");
-                    u.setField("username", user);
-                    u.setField("xp");
-                    u.setField("falafels");
-                    u.setField("progress", "");
-                    u.setField("email", email);
-                    Toast.makeText(u.context, "Success!", Toast.LENGTH_SHORT).show();
-                    u.context.startActivity(new Intent(u.context, LoginActivity.class));
-                }).addOnFailureListener(err::accept);
-        return u;
-    }
-
-    public static User login(Context c, String email,
-                             String password, Consumer<Exception> err) {
-        User u = new User(email, "", password, c);
-        u.auth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener(authResult -> {
-                    u.basicSetup();
-                    u.<String>getField("progress", p -> {
-                        u.progress = new ArrayList<String>(
-                                Arrays.asList(p.split("|")));
-                    });
-                    Toast.makeText(c, "Success", Toast.LENGTH_SHORT).show();
-                    c.startActivity(new Intent(c, MainActivity.class));
-                }).addOnFailureListener(err::accept);
-        return u;
-    }
-
-    private void setField(String field, Object value) {
-        ref.child(field).setValue(value);
-    }
-
-    private void setField(String field) {
-        setField(field, 0);
-    }
-
-    private<T> void getField(String field, Consumer<T> c) {
-        ref.child(auth.getUid()).child(field).addValueEventListener(new ValueEventListener() {
+    public static int getXP(String UID){
+        final int[] value = new int[1];
+        FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("user/"+UID+"/xp").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                c.accept((T) snapshot.getValue());
+                value[0] = snapshot.getValue(Integer.class);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}
         });
+        Log.d("XP", ": " + value[0]);
+        return value[0];
     }
 
-    public void changeUsername(String _username){
-        username = _username;
-        setField("username", username);
-    }
 }

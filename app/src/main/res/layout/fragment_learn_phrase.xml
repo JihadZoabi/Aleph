@@ -34,7 +34,7 @@
         android:layout_marginTop="30dp"
         android:padding="8dp"
         android:text="hebrewWordInArabic"
-        android:textColor="@color/black"
+        android:textColor="#795F5F"
         android:textFontWeight="300"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/rectangle_1"
@@ -58,7 +58,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="HebrewWordInArabic"
-        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
@@ -70,7 +69,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="WordInHebrew"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
         app:layout_constraintTop_toBottomOf="@+id/HebrewWordInArabic" />
@@ -85,21 +83,13 @@
         app:layout_constraintStart_toStartOf="@+id/rectangle_1"
         app:layout_constraintTop_toBottomOf="@+id/WordInHebrew" />
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/micButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/mic_circle"
+        android:text="Record"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_1">
-
-        <ImageView
-            android:id="@+id/micButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/microphone_up" />
-    </RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

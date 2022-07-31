@@ -102,9 +102,11 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 //TODO if wrong.
                 Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    Log.d("JIHAD'S SHITTY CODE","HERE");
                     mVibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
                 } else {
                     //deprecated in API 26
+                    Log.d("JIHAD'S SHITTY CODE","HERE2");
                     mVibrator.vibrate(500);
                 }
             }
