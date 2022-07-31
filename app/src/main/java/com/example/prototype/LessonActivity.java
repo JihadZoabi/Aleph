@@ -19,6 +19,7 @@ import com.example.prototype.fragments.CompleteSentenceFragment;
 import com.example.prototype.fragments.FourPicturesFragment;
 import com.example.prototype.fragments.LearnPhraseFragment;
 import com.example.prototype.fragments.MultipleChoiceFragment;
+import com.example.prototype.fragments.SignFragment;
 
 public class LessonActivity extends AppCompatActivity {
     private static Button continueBtn;
@@ -70,6 +71,8 @@ public class LessonActivity extends AppCompatActivity {
             public void on(LearnPhrase lp) {
                 showFragment(new LearnPhraseFragment(l, lp));
             }
+
+            public void on(SignQuestion s) {showFragment(new SignFragment(l, s));}
         });
         e.putInt(l.getName(), l.getXP());
         e.apply();
