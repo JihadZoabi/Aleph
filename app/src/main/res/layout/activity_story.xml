@@ -5,39 +5,185 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StoryActivity"
-    android:padding="10dp">
+    android:background="@color/white">
 
-    <RelativeLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/rect_green"
-        android:padding="10dp"
-        android:id="@+id/dialog1">
 
-        <TextView
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/next"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
-    </RelativeLayout>
+            android:orientation="vertical"
+            android:id="@+id/linear">
 
-    <RelativeLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rect_blue"
-        android:padding="10dp"
-        android:id="@+id/dialog2"
-        android:layout_below="@id/dialog1"
-        android:layout_marginTop="15dp"
-        android:layout_alignParentLeft="true">
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog1"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_green"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:layout_gravity="left">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog2"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_blue"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog3"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_green"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog4"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_blue"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog5"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_green"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog6"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_blue"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog7"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_green"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_gravity="left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:clickable="true"
+                android:id="@+id/dialog8"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rect_blue"
+                android:padding="10dp"
+                android:layout_gravity="right"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="246dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentRight="true"
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
     <Button
         android:layout_width="wrap_content"
