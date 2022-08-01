@@ -5,8 +5,10 @@ import androidx.annotation.NonNull;
 import java.util.Arrays;
 
 public class SignQuestion implements Question {
-    public SignQuestion(String question, String[] answers, int correct, int xp) {
+    public SignQuestion(String question, String blurredImageLink, String imageLink, String[] answers, int correct, int xp) {
         this.question = question;
+        this.blurredImageLink = blurredImageLink;
+        this.imageLink = imageLink;
         this.answers = answers;
         this.correct = correct;
         this.xp = xp;
@@ -16,11 +18,13 @@ public class SignQuestion implements Question {
         if (data.length < 4)
             throw new BadXML();
         question = data[0];
-        xp = Integer.parseInt(data[1]);
-        correct = Integer.parseInt(data[2]);
+        imageLink = data[1];
+        blurredImageLink = data[2];
+        xp = Integer.parseInt(data[3]);
+        correct = Integer.parseInt(data[4]);
         if (correct > data.length - 3)
             throw new BadXML();
-        answers = Arrays.copyOfRange(data, 3, data.length);
+        answers = Arrays.copyOfRange(data, 5, data.length);
     }
 
     protected String stringer() {
@@ -34,7 +38,7 @@ public class SignQuestion implements Question {
 
     @NonNull
     public String toString() {
-        return "MultipleChoice: " + stringer();
+        return "SignQuestion: " + stringer();
     }
 
     public int count() {
@@ -53,6 +57,10 @@ public class SignQuestion implements Question {
         return correct;
     }
 
+    public String getImageLink() {return imageLink;}
+
+    public String getBlurredImageLink() {return blurredImageLink;}
+
     public void use(Visitor v) {
         v.on(this);
     }
@@ -65,4 +73,6 @@ public class SignQuestion implements Question {
     private final String question;
     private final String[] answers;
     private final int correct;
+    private final String imageLink;
+    private final String blurredImageLink;
 }
