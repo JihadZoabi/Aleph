@@ -2,6 +2,7 @@
 <resources>
     <array name="lessons">
         <item>@array/l1</item>
+        <item>@array/l3</item>
     </array>
     <array name="l1">
         <item>lessonName</item>

@@ -78,12 +78,12 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), LessonActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Greetings");
+                bundle.putString("LessonName","Food");
                 i.putExtras(bundle);
                 startActivity(i);
             }
         });
-        
+
         transportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
