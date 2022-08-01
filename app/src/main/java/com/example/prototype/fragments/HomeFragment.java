@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), LessonActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("LessonName","Food");
+                bundle.putString("LessonName","Transport");
                 i.putExtras(bundle);
                 startActivity(i);
             }

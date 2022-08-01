@@ -3,10 +3,10 @@
     <array name="lessons">
         <item>@array/l1</item>
         <item>@array/l3</item>
+        <item>@array/l4</item>
     </array>
     <array name="l1">
         <item>Sport</item>
-        <item>@array/q0</item>
         <item>@array/q1</item>
         <item>@array/q2</item>
         <item>@array/q3</item>
@@ -22,17 +22,11 @@
         <item>@array/l3q3</item>
         <item>@array/l3q4</item>
         <item>@array/l3q5</item>
-    </array>
-    <array name="q0">
-        <item>SignQuestion</item>
-        <item>الى اين تشير اللافتة</item>
-        <item>https://i.imgur.com/iHyrI0K.png</item>
-        <item>https://i.imgur.com/JdQiJM5.jpg</item>
-        <item>2</item>
-        <item>1</item>
-        <item>Tel Aviv</item>
-        <item>Jerusalem</item>
-        <item>Acre</item>
+     </array>
+    <array name="l4">
+        <item>Transport</item>
+        <item>@array/l4q1</item>
+        <item>@array/l4q2</item>
     </array>
     <array name="q1">
         <item>LearnPhrase</item>
@@ -169,5 +163,29 @@
         <item>تسلاخت</item>
         <item>لهيترؤوت</item>
         <item>مسعادا</item>
+    </array>
+
+    <array name="l4q1">
+        <item>SignQuestion</item>
+        <item>الى اين تشير اللافتة</item>
+        <item>https://i.imgur.com/iHyrI0K.png</item>
+        <item>https://i.imgur.com/JdQiJM5.jpg</item>
+        <item>2</item>
+        <item>1</item>
+        <item>Tel Aviv</item>
+        <item>Jerusalem</item>
+        <item>Acre</item>
+    </array>
+
+    <array name="l4q2">
+        <item>SignQuestion</item>
+        <item>الى اين تشير اللافتة</item>
+        <item>https://i.imgur.com/WQIpmZe.jpg</item>
+        <item>https://i.imgur.com/G6wNxeh.jpg</item>
+        <item>2</item>
+        <item>2</item>
+        <item>Nazareth</item>
+        <item>Jerusalem</item>
+        <item>Tel Aviv</item>
     </array>
 </resources>
