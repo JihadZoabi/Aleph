@@ -2,6 +2,7 @@
 <resources>
     <array name="lessons">
         <item>@array/l1</item>
+        <item>@array/l3</item>
     </array>
     <array name="l1">
         <item>lessonName</item>
@@ -13,6 +14,14 @@
         <item>@array/q5</item>
         <item>@array/q6</item>
         <item>@array/q7</item>
+    </array>
+    <array name="l3">
+        <item>Food</item>
+        <item>@array/l3q1</item>
+        <item>@array/l3q2</item>
+        <item>@array/l3q3</item>
+        <item>@array/l3q4</item>
+        <item>@array/l3q5</item>
     </array>
     <array name="q0">
         <item>SignQuestion</item>
@@ -98,5 +107,67 @@
         <item>https://i.imgur.com/JyD21qv.png</item>
         <item>https://i.imgur.com/NCYI6kq.png</item>
         <item>https://i.imgur.com/s7OHbfD.png</item>
+    </array>
+    <array name="l3q1">
+        <item>LearnPhrase</item>
+        <item>ان يأكل</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/QM4liFl.png</item>
+        <item>لاخول</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>לאכול</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+
+    <array name="l3q2">
+        <item>LearnPhrase</item>
+        <item>صحن</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/n6hV4Ki.png</item>
+        <item>تسلاخت</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>צלחת</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+
+    <array name="l3q3">
+        <item>LearnPhrase</item>
+        <item>مطعم</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/46ElZwD.png</item>
+        <item>مسعادا</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>מסעדה</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="l3q4">
+        <item>MultipleChoice</item>
+        <item>اين تستطيع ان تطلب الطعام؟</item>
+        <item>2</item>
+        <item>0</item>
+        <item>مسعادا</item>
+        <item>بوكر توف</item>
+        <item>شالوم</item>
+    </array>
+    <array name="l3q5">
+        <item>MultipleChoice</item>
+        <item>ما معنى كلمة صحن؟</item>
+        <item>2</item>
+        <item>0</item>
+        <item>تسلاخت</item>
+        <item>لهيترؤوت</item>
+        <item>مسعادا</item>
     </array>
 </resources>

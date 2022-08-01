@@ -65,16 +65,25 @@ public class HomeFragment extends Fragment {
         foodRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FoodActivity.class));
+                Intent i = new Intent(getActivity(), LessonActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("LessonName","Food");
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
 
         schoolRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "BOO", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getActivity(), LessonActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("LessonName","Food");
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
+
         transportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
