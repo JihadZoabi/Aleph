@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_image2.xml" value="0.1555" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_world.xml" value="0.1555" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/podium.xml" value="0.1555" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_introduction.xml" value="0.23143115942028986" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_story.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_home.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/slide_layout.xml" value="0.23143115942028986" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/border_image_four_pictures.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/circle.xml" value="0.1" />

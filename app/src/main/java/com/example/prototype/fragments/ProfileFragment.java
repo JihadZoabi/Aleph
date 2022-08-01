@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.IntroductionActivity;
 import com.example.prototype.LoginActivity;
 import com.example.prototype.R;
 import com.example.prototype.StoryActivity;
@@ -60,24 +61,8 @@ public class ProfileFragment extends Fragment {
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mAuth.signOut();
-                startActivity(new Intent(getActivity(), LoginActivity.class));*/
-                Intent i = new Intent(getActivity(), StoryActivity.class);
-                ArrayList<String> messages = new ArrayList<String>();
-                ArrayList<String> translations = new ArrayList<String>();
-                messages.add("Communism is the best!");
-                messages.add("Nah! Capitalism is the best!");
-                messages.add("Marx was right you stupid bourgeoisie");
-                messages.add("You're stupid you fucking commie");
-                messages.add("Now who's being disrespectful?");
-                translations.add("קומוניזם הכי טוב");
-                translations.add("קפיטליזם הכי טוב!");
-                translations.add("מרקס צדק בורגן טיפש שכמותך.");
-                translations.add("אתה טיפש קומוניסט שכמותך.");
-                translations.add("עכשיו מי מדבר באופן לא מכבד?");
-                i.putStringArrayListExtra("messages", messages);
-                i.putStringArrayListExtra("translations", translations);
-                startActivity(i);
+                mAuth.signOut();
+                startActivity(new Intent(getActivity(), IntroductionActivity.class));
             }
         });
 

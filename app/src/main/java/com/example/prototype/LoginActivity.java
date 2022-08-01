@@ -39,10 +39,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if(mAuth.getCurrentUser() != null){
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        }
-
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
