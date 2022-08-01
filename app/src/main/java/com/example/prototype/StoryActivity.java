@@ -23,10 +23,13 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
 
     private String[] messages;
     private String[] translations;
+    private String[] hebrewSentences;
     private RelativeLayout[] layouts;
     private Button revealNext;
     private LinearLayout linearLayout;
     private Drawable d;
+    private TextToAzure tta;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
         View v7 = findViewById(R.id.play7);
         d = v7.getBackground();
 
+        tta = new TextToAzure(getResources());
         revealNext = findViewById(R.id.next);
         linearLayout = findViewById(R.id.linear);
 
@@ -46,6 +50,9 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
 
         translations = new String[bundle.getStringArrayList("translations").size()];
         translations = bundle.getStringArrayList("translations").toArray(translations);
+
+        hebrewSentences = new String[bundle.getStringArrayList("hebrew").size()];
+        hebrewSentences = bundle.getStringArrayList("hebrew").toArray(hebrewSentences);
 
         layouts = new RelativeLayout[100];
 
@@ -62,6 +69,14 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
         for(int i = 0; i < messages.length; i++){
             ((TextView) layouts[i].getChildAt(0)).setText(messages[i]);
             layouts[i].setOnClickListener(this);
+            layouts[i].setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    String text = hebrewSentences[linearLayout.indexOfChild(view)];
+                    tta.speak(text);
+                    return false;
+                }
+            });
         }
 
         final int[] counter = {0};
@@ -78,6 +93,7 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
 
     @Override
     public void onClick(View view) {

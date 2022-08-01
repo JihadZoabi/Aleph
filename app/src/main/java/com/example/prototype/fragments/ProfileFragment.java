@@ -65,7 +65,9 @@ public class ProfileFragment extends Fragment {
                 Intent i = new Intent(getActivity(), StoryActivity.class);
                 ArrayList<String> messages = new ArrayList<String>();
                 ArrayList<String> translations = new ArrayList<String>();
-                messages.add("سلِخا, أفشار لشؤول أوتاخ شَئلاه؟");
+                ArrayList<String> hebrewSentences = new ArrayList<String>();
+
+                messages.add("سلِخا, أفشار لشؤول شَئلاه؟");
                 messages.add("كن, ماه آت تساريخ؟");
                 messages.add("متاي مجيع هاوتوبوس لعكو؟");
                 messages.add("انا خوشيف شبيشاعة شلوش");
@@ -75,8 +77,14 @@ public class ProfileFragment extends Fragment {
                 translations.add("وينتا بيجي الباص ععكا؟");
                 translations.add("بفكر عالساعة ثلاث");
                 translations.add("شكرا كثير");
+                hebrewSentences.add("סליחה, אפשר לשאול שאלה?");
+                hebrewSentences.add("כן, מה אתה צריך?");
+                hebrewSentences.add("מתי מגיע האוטובוס לעכו?");
+                hebrewSentences.add("אני חושב שבשעה שלוש");
+                hebrewSentences.add("תודה רבה!");
                 i.putStringArrayListExtra("messages", messages);
                 i.putStringArrayListExtra("translations", translations);
+                i.putStringArrayListExtra("hebrew", hebrewSentences);
                 startActivity(i);
             }
         });
