@@ -5,7 +5,7 @@
         <item>@array/l3</item>
     </array>
     <array name="l1">
-        <item>lessonName</item>
+        <item>Sport</item>
         <item>@array/q0</item>
         <item>@array/q1</item>
         <item>@array/q2</item>

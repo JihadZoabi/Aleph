@@ -58,7 +58,11 @@ public class HomeFragment extends Fragment {
         sportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), LessonActivity.class));
+                Intent i = new Intent(getActivity(), LessonActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("LessonName","Sport");
+                i.putExtras(bundle);
+                startActivity(i);
             }
         });
 
