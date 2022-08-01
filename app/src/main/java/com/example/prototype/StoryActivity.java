@@ -2,7 +2,9 @@ package com.example.prototype;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,11 +26,15 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
     private RelativeLayout[] layouts;
     private Button revealNext;
     private LinearLayout linearLayout;
+    private Drawable d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
+
+        View v7 = findViewById(R.id.play7);
+        d = v7.getBackground();
 
         revealNext = findViewById(R.id.next);
         linearLayout = findViewById(R.id.linear);
@@ -75,10 +81,17 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+        Log.d("draw", String.valueOf(view instanceof ConstraintLayout));
+        Log.d("draw2", String.valueOf(view.getId()));
         if(view instanceof RelativeLayout){
             String text = translations[linearLayout.indexOfChild(view)];
             TranslationDialog translationDialog = new TranslationDialog(text);
             translationDialog.show(getSupportFragmentManager(), "translate!");
         }
+
+        /*if (view.getDrawableState()[0] = ){ // check if view is the play button
+            Log.d("play button", "whoooooooo");
+            // TODO: make sound play
+        }*/
     }
 }
