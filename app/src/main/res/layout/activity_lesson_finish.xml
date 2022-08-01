@@ -28,7 +28,7 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:layout_constraintTop_toBottomOf="@id/congratsText"
-        app:layout_constraintBottom_toTopOf="@id/completeText"
+        app:layout_constraintBottom_toTopOf="@id/rectangle_5"
         app:lottie_rawRes="@raw/medal_animation" />
 
 <!--    <ImageView-->
@@ -56,16 +56,6 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/congratsText" />-->
 
-    <TextView
-        android:id="@+id/completeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You just completed level X of Y!"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rectangle_5" />
-
     <View
         android:id="@+id/rectangle_5"
         android:layout_width="300dp"
@@ -76,7 +66,7 @@
         android:background="@drawable/rounded_corners"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/completeText" />
+        app:layout_constraintTop_toBottomOf="@+id/animationView" />
 
     <RelativeLayout
         android:id="@+id/flafelRect"
@@ -120,6 +110,7 @@
         android:layout_height="wrap_content"
         android:text="Continue"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/returnBtn"
         app:layout_constraintEnd_toEndOf="@+id/returnBtn"
@@ -137,6 +128,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flafelRect" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_5"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_5"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

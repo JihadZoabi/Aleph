@@ -6,6 +6,11 @@ public class Lesson {
     private final Question[] qs;
     private final String name;
     private int xp = 0;
+    private int correctAnswers = 0;
+
+    public int getLength() {
+        return qs.length;
+    }
 
     public void reset() {
         xp = 0;
@@ -15,8 +20,13 @@ public class Lesson {
         return xp;
     }
 
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
     public void gotCorrect(Question q) {
         xp += q.getXP();
+        correctAnswers++;
     }
 
     @NonNull

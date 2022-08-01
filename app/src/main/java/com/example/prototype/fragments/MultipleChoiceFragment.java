@@ -34,6 +34,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private final MultipleChoice m;
     private final Lesson l;
     private MediaPlayer mp;
+    private int flag = 0;
 
     public MultipleChoiceFragment(Lesson l, MultipleChoice m){
         this.l = l;
@@ -101,9 +102,15 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
                 mp.start();
-                l.gotCorrect(m);
+                if (flag == 0) {
+                    flag++;
+                    l.gotCorrect(m);
+                    Log.d("CHECK","CORRECT " + flag);
+                }
             } else {
                 //TODO if wrong.
+                flag++;
+                Log.d("CHECK","FALSE" + flag);
                 Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     Log.d("JIHAD'S SHITTY CODE","HERE");

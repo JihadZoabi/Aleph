@@ -26,6 +26,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     private final FourPictures f;
     private final Lesson l;
     private MediaPlayer mp;
+    private int flag = 0;
 
     public FourPicturesFragment(Lesson l, FourPictures f){
         this.l = l;
@@ -68,9 +69,13 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
                 mp.start();
-                l.gotCorrect(f);
+                if (flag == 0) {
+                    flag++;
+                    l.gotCorrect(f);
+                }
             } else {
-                Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
+                flag++;
+                Toast.makeText(getActivity(), "Try Again!", Toast.LENGTH_SHORT).show();
             }
         }
     }

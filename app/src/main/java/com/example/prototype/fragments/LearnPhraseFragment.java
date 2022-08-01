@@ -84,6 +84,7 @@ public class LearnPhraseFragment extends Fragment {
         soundVoice = (ImageView) v.findViewById(R.id.sound_wave);
         tta = new TextToAzure(getResources());
 
+        l.gotCorrect(lp); // Always correct.
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
 
