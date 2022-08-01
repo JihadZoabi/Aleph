@@ -1,6 +1,7 @@
 package com.example.prototype.fragments;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -32,6 +33,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
     private Vibrator mVibrator;
     private final MultipleChoice m;
     private final Lesson l;
+    private MediaPlayer mp;
 
     public MultipleChoiceFragment(Lesson l, MultipleChoice m){
         this.l = l;
@@ -55,6 +57,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
         mButtonChoice3 = (Button) v.findViewById(R.id.choice3);
         mButtonChoice4 = (Button) v.findViewById(R.id.choice4);
         mVibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        mp = MediaPlayer.create(getActivity(), R.raw.correct_audio);
 
         mButtonChoice1.setOnClickListener(this);
         mButtonChoice2.setOnClickListener(this);
@@ -97,6 +100,7 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 //TODO if correct.
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
+                mp.start();
                 l.gotCorrect(m);
             } else {
                 //TODO if wrong.

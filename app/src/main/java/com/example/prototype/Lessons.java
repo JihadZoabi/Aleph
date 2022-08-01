@@ -55,6 +55,9 @@ public class Lessons {
                     case "LearnPhrase":
                         qs[j - 1] = new LearnPhrase(data);
                         break;
+                    case "SignQuestion":
+                        qs[j - 1] = new SignQuestion(data);
+                        break;
                     default:
                         throw new BadXML();
                 }

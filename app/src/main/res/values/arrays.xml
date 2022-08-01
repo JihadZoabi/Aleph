@@ -5,6 +5,7 @@
     </array>
     <array name="l1">
         <item>lessonName</item>
+        <item>@array/q0</item>
         <item>@array/q1</item>
         <item>@array/q2</item>
         <item>@array/q3</item>
@@ -12,6 +13,17 @@
         <item>@array/q5</item>
         <item>@array/q6</item>
         <item>@array/q7</item>
+    </array>
+    <array name="q0">
+        <item>SignQuestion</item>
+        <item>الى اين تشير اللافتة</item>
+        <item>https://i.imgur.com/iHyrI0K.png</item>
+        <item>https://i.imgur.com/JdQiJM5.jpg</item>
+        <item>2</item>
+        <item>1</item>
+        <item>Tel Aviv</item>
+        <item>Jerusalem</item>
+        <item>Acre</item>
     </array>
     <array name="q1">
         <item>LearnPhrase</item>

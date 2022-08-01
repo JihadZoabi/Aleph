@@ -1,5 +1,6 @@
 package com.example.prototype.fragments;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
     private ImageView waveSound;
     private final FourPictures f;
     private final Lesson l;
+    private MediaPlayer mp;
 
     public FourPicturesFragment(Lesson l, FourPictures f){
         this.l = l;
@@ -37,6 +39,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
         Picasso.get().setLoggingEnabled(true);
         questionText = v.findViewById(R.id.fourPicturesQuestion);
         waveSound = v.findViewById(R.id.sound_wave);
+        mp = MediaPlayer.create(getActivity(), R.raw.correct_audio);
         imageChoices[0] = (ImageView) v.findViewById(R.id.imageTopRight);
         imageChoices[1] = (ImageView) v.findViewById(R.id.imageBottomRight);
         imageChoices[2] = (ImageView) v.findViewById(R.id.imageBottomLeft);
@@ -64,6 +67,7 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
             if (chosenImage == correct) {
                 Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
                 LessonActivity.revealButton();
+                mp.start();
                 l.gotCorrect(f);
             } else {
                 Toast.makeText(getActivity(), "Stupid!", Toast.LENGTH_SHORT).show();
