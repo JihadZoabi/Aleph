@@ -38,6 +38,7 @@ import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
+import com.example.prototype.TextToAzure;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
@@ -55,6 +56,8 @@ public class LearnPhraseFragment extends Fragment {
     private SpeechRecognizer speechRecognizer;
     private final LearnPhrase lp;
     private final Lesson l;
+    private ImageView soundVoice;
+    private TextToAzure tta;
 
     public LearnPhraseFragment(Lesson l, LearnPhrase lp){
         this.l = l;
@@ -77,6 +80,10 @@ public class LearnPhraseFragment extends Fragment {
         HebrewWordInArabic = (TextView) v.findViewById(R.id.HebrewWordInArabic);
         WordInHebrew = (TextView) v.findViewById(R.id.WordInHebrew);
         micButton = (Button) v.findViewById(R.id.micButton);
+        soundVoice = (ImageView) v.findViewById(R.id.sound_wave);
+        tta = new TextToAzure(getResources());
+
+
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
 
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -192,10 +199,18 @@ public class LearnPhraseFragment extends Fragment {
             }
         });
 
+        soundVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tta.speak(lp.getAnswers()[2]);
+            }
+        });
+
 
         updateQuestion();
         return v;
     }
+
 
     @Override
     public void onDestroy() {

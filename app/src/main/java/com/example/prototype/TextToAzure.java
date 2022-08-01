@@ -1,5 +1,6 @@
 package com.example.prototype;
 
+import android.content.res.Resources;
 import android.util.Log;
 
 import com.microsoft.cognitiveservices.speech.CancellationReason;
@@ -13,8 +14,8 @@ import com.microsoft.cognitiveservices.speech.audio.AudioConfig;
 public class TextToAzure {
     private final SpeechConfig config;
     private final SpeechSynthesizer synth;
-    public TextToAzure() {
-        config = SpeechConfig.fromSubscription("1be04d10875842bbaf348a92c4a409be", "eastus");
+    public TextToAzure(Resources r) {
+        config = SpeechConfig.fromSubscription(r.getString(R.string.key), r.getString(R.string.area));
         config.setSpeechSynthesisVoiceName("he-IL-AvriNeural");
         synth = new SpeechSynthesizer(config);
     }
