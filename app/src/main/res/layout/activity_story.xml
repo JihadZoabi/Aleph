@@ -34,21 +34,22 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/text0"
-                    android:textDirection="ltr"
                     android:fontFamily="@font/sansita_regular"
-                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+                    android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف"
+                    android:textDirection="ltr" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/play0"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_below="@id/text0"
                     android:layout_marginTop="10dp"
-                    android:elevation="10dp"
-                    android:background="@drawable/ic_play_button" />
+                    android:background="@drawable/ic_play_button"
+                    android:elevation="10dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -113,10 +114,10 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@id/text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:id="@id/text2"
                     android:fontFamily="@font/sansita_regular"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
 
@@ -153,11 +154,11 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text3"
                     android:layout_width="246dp"
                     android:layout_height="52dp"
-                    android:fontFamily="@font/sansita_regular"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/text3"
+                    android:fontFamily="@font/sansita_regular"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
 
                 <View
@@ -191,12 +192,13 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sansita_regular"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/text4"
+                    android:fontFamily="@font/sansita_regular"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+
                 <View
                     android:id="@+id/play4"
                     android:layout_width="20dp"
@@ -230,12 +232,13 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text5"
                     android:layout_width="246dp"
                     android:layout_height="52dp"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/text5"
                     android:fontFamily="@font/sansita_regular"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+
                 <View
                     android:id="@+id/play5"
                     android:layout_width="20dp"
@@ -267,12 +270,13 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:fontFamily="@font/sansita_regular"
-                    android:id="@+id/text6"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
+
                 <View
                     android:id="@+id/play6"
                     android:layout_width="20dp"
@@ -297,19 +301,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dialog1"
                 android:layout_alignParentLeft="true"
-                android:fontFamily="@font/sansita_regular"
                 android:layout_gravity="left"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rect_blue"
                 android:clickable="true"
+                android:fontFamily="@font/sansita_regular"
                 android:padding="10dp"
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/text7"
                     android:layout_width="246dp"
                     android:layout_height="52dp"
                     android:layout_alignParentRight="true"
-                    android:id="@+id/text7"
                     android:text="لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -336,10 +340,11 @@
     </ScrollView>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:text="Reveal Next"
+        android:background="@drawable/ic_continue_button"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:id="@+id/next"/>

@@ -25,7 +25,7 @@ public class StoryActivity extends AppCompatActivity implements View.OnClickList
     private String[] translations;
     private String[] hebrewSentences;
     private RelativeLayout[] layouts;
-    private Button revealNext;
+    private View revealNext;
     private LinearLayout linearLayout;
     private Drawable d;
     private TextToAzure tta;

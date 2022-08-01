@@ -14,6 +14,7 @@ import static android.speech.SpeechRecognizer.ERROR_TOO_MANY_REQUESTS;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
@@ -51,7 +52,7 @@ public class LearnPhraseFragment extends Fragment {
     private ImageView pictureOfWord;
     private TextView HebrewWordInArabic;
     private TextView WordInHebrew;
-    private Button micButton;
+    private View micButton;
     private final Integer RecordAudioRequestCode = 1;
     private SpeechRecognizer speechRecognizer;
     private final LearnPhrase lp;
@@ -79,7 +80,7 @@ public class LearnPhraseFragment extends Fragment {
         pictureOfWord = (ImageView) v.findViewById(R.id.pictureOfWord);
         HebrewWordInArabic = (TextView) v.findViewById(R.id.HebrewWordInArabic);
         WordInHebrew = (TextView) v.findViewById(R.id.WordInHebrew);
-        micButton = (Button) v.findViewById(R.id.micButton);
+        micButton = v.findViewById(R.id.micButton);
         soundVoice = (ImageView) v.findViewById(R.id.sound_wave);
         tta = new TextToAzure(getResources());
 
@@ -188,11 +189,14 @@ public class LearnPhraseFragment extends Fragment {
         micButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                micButton.setBackgroundResource(R.drawable.rec_red);
                 Log.d("SST","Hi");
-                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                if (motionEvent.getAction() == MotionEvent.ACTION_BUTTON_RELEASE){
+                    Log.d("checkmic", "works!");
+                    micButton.setBackgroundResource(R.drawable.rec_def);
                     speechRecognizer.stopListening();
                 }
-                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                else if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
                     speechRecognizer.startListening(speechRecognizerIntent);
                 }
                 return false;
