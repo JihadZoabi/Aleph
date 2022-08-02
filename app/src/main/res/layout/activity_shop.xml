@@ -30,7 +30,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:layout_marginLeft="22dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/shop_category"
             android:elevation="4dp">
 
@@ -41,11 +41,36 @@
                 android:background="@drawable/shop_cyan_rect" />
 
             <View
+                android:id="@+id/flafel_ic"
                 android:layout_width="65dp"
                 android:layout_height="55dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/flafel" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="38dp"
+                android:layout_toRightOf="@id/flafel_ic"
+                android:fontFamily="@font/sansita_regular"
+                android:text="99 Flafels"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="45dp"
+                android:fontFamily="@font/sansita_regular"
+                android:text="10 NIS"
+                android:textSize="20sp" />
         </RelativeLayout>
 
 
@@ -53,11 +78,12 @@
             android:id="@+id/shop_category_2"
             android:layout_width="285dp"
             android:layout_height="119dp"
+            android:layout_below="@id/shop_category_1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:layout_marginLeft="22dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="250dp"
             android:background="@drawable/shop_category"
             android:elevation="4dp">
 
@@ -68,11 +94,35 @@
                 android:background="@drawable/shop_cyan_rect" />
 
             <View
+                android:id="@+id/hint_ic"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/hint" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="38dp"
+                android:layout_toRightOf="@id/hint_ic"
+                android:fontFamily="@font/sansita_regular"
+                android:text="15 Hints"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="45dp"
+                android:fontFamily="@font/sansita_regular"
+                android:text="3 Flafel"
+                android:textSize="20sp" />
         </RelativeLayout>
 
 
@@ -80,9 +130,9 @@
             android:id="@+id/shop_category_3"
             android:layout_width="285dp"
             android:layout_height="119dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:layout_below="@id/shop_category_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
             android:background="@drawable/shop_category"
             android:elevation="4dp">
 
@@ -93,11 +143,36 @@
                 android:background="@drawable/shop_cyan_rect" />
 
             <View
+                android:id="@+id/xml_icon"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/hint" />
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_xml" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="38dp"
+                android:layout_toRightOf="@id/xml_icon"
+                android:fontFamily="@font/sansita_regular"
+                android:text="XP Boost"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="45dp"
+                android:fontFamily="@font/sansita_regular"
+                android:text="5 Flafel"
+                android:textSize="20sp" />
+
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
