@@ -22,13 +22,15 @@
         android:fontFamily="@font/sansita_regular"
         android:textSize="20dp"
         android:id="@+id/paragraph"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_below="@id/paragraph"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/agent1"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/paragraph"/>
+        android:src="@drawable/pic"
+        android:id="@+id/call1"/>
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"

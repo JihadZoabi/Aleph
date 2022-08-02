@@ -189,17 +189,18 @@ public class LearnPhraseFragment extends Fragment {
         micButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                micButton.setBackgroundResource(R.drawable.rec_red);
-                Log.d("SST","Hi");
-                if (motionEvent.getAction() == MotionEvent.ACTION_BUTTON_RELEASE){
+
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
                     Log.d("checkmic", "works!");
                     micButton.setBackgroundResource(R.drawable.rec_def);
                     speechRecognizer.stopListening();
                 }
                 else if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
                     speechRecognizer.startListening(speechRecognizerIntent);
+                    micButton.setBackgroundResource(R.drawable.rec_red);
+                    Log.d("SST","Hi");
                 }
-                return false;
+                return true;
             }
         });
 

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.prototype.HelpDialog;
 import com.example.prototype.IntroductionActivity;
 import com.example.prototype.LoginActivity;
 import com.example.prototype.R;
@@ -40,6 +41,7 @@ public class ProfileFragment extends Fragment {
     DatabaseReference ref;
     TextView greetingText;
     TextView xpText;
+    Button help;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +51,7 @@ public class ProfileFragment extends Fragment {
 
         signoutBtn = v.findViewById(R.id.signout_button);
         greetingText = v.findViewById(R.id.greeting);
+        help = v.findViewById(R.id.call);
 
         mAuth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance("https://spokenli-default-rtdb.europe-west1.firebasedatabase.app/").getReference("user/");
@@ -63,6 +66,13 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 mAuth.signOut();
                 startActivity(new Intent(getActivity(), IntroductionActivity.class));
+            }
+        });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HelpDialog helpDialog = new HelpDialog();
+                helpDialog.show(getActivity().getSupportFragmentManager(), "help");
             }
         });
 
