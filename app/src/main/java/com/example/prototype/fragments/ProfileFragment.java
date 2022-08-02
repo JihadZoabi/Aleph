@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,13 +36,13 @@ public class ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    Button signoutBtn;
+    RelativeLayout signoutBtn;
     FirebaseAuth mAuth;
     TextView userText;
     DatabaseReference ref;
     TextView greetingText;
     TextView xpText;
-    Button help;
+    RelativeLayout help;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
