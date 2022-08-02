@@ -36,6 +36,7 @@ public class SignFragment extends Fragment implements View.OnClickListener {
     private final SignQuestion s;
     private final Lesson l;
     private MediaPlayer mp;
+    private int flag = 0;
 
     public SignFragment(Lesson l, SignQuestion s){
         this.l = l;
@@ -99,8 +100,12 @@ public class SignFragment extends Fragment implements View.OnClickListener {
                 Picasso.get().load(s.getImageLink()).into(mSignImage);
                 mp.start();
                 LessonActivity.revealButton();
-                l.gotCorrect(s);
+                if (flag == 0) {
+                    l.gotCorrect(s);
+                    flag++;
+                }
             } else {
+                flag++;
                 //TODO if wrong.
                 WrongDialog wrongDialog = new WrongDialog();
                 wrongDialog.show(getActivity().getSupportFragmentManager(), "wrong");
