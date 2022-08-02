@@ -34,7 +34,7 @@
         android:layout_marginTop="30dp"
         android:padding="8dp"
         android:text="hebrewWordInArabic"
-        android:textColor="#795F5F"
+        android:textColor="@color/black"
         android:textFontWeight="300"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/rectangle_1"

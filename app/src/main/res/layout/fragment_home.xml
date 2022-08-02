@@ -18,6 +18,7 @@
             android:elevation="2dp">
 
             <TextView
+                android:id="@+id/welcome_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -27,14 +28,15 @@
                 android:textSize="20sp" />
 
             <ImageView
+                android:id="@+id/flafels"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="39dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="29dp"
-                android:src="@drawable/icon_app_spokenli" />
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/flafel" />
         </RelativeLayout>
 
 
