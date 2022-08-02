@@ -50,6 +50,8 @@ public class LessonActivity extends AppCompatActivity {
         if (curr >= l.count()) {
             Intent i = new Intent(this, LessonFinishActivity.class);
             i.putExtra("xp", l.getXP());
+            i.putExtra("correctAnswers",l.getCorrectAnswers());
+            i.putExtra("LessonLength",l.getLength());
             startActivity(i);
             e.putInt(l.getName() + " done", 1);
             return;
