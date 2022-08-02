@@ -16,6 +16,7 @@ import com.example.prototype.FourPictures;
 import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
+import com.example.prototype.WrongDialog;
 import com.squareup.picasso.Picasso;
 
 public class FourPicturesFragment extends Fragment implements View.OnClickListener {
@@ -74,8 +75,9 @@ public class FourPicturesFragment extends Fragment implements View.OnClickListen
                     l.gotCorrect(f);
                 }
             } else {
+                WrongDialog wrongDialog = new WrongDialog();
+                wrongDialog.show(getActivity().getSupportFragmentManager(), "wrong");
                 flag++;
-                Toast.makeText(getActivity(), "Try Again!", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -22,6 +22,7 @@ import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.MultipleChoice;
 import com.example.prototype.R;
+import com.example.prototype.WrongDialog;
 
 public class MultipleChoiceFragment extends Fragment implements View.OnClickListener {
     private TextView mQuestionView;
@@ -109,9 +110,10 @@ public class MultipleChoiceFragment extends Fragment implements View.OnClickList
                 }
             } else {
                 //TODO if wrong.
+                WrongDialog wrongDialog = new WrongDialog();
+                wrongDialog.show(getActivity().getSupportFragmentManager(), "wrong");
                 flag++;
                 Log.d("CHECK","FALSE" + flag);
-                Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     Log.d("JIHAD'S SHITTY CODE","HERE");
                     mVibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));

@@ -7,13 +7,15 @@
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/ic_world.xml" value="0.1555" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/podium.xml" value="0.1555" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/profile.xml" value="0.1555" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/drawable/try_again_wrong.xml" value="0.1555" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_introduction.xml" value="0.23143115942028986" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/activity_story.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_home.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_learn_phrase.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_learn_phrase.xml" value="0.264" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/help_dialog.xml" value="0.23143115942028986" />
         <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/slide_layout.xml" value="0.23143115942028986" />
+        <entry key="..\:/Users/eyalz/StudioProjects/Aleph/app/src/main/res/layout/wrong_answer.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/border_image_four_pictures.xml" value="0.1787037037037037" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Prototype/app/src/main/res/drawable/circle.xml" value="0.1" />

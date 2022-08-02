@@ -22,6 +22,7 @@ import com.example.prototype.Lesson;
 import com.example.prototype.LessonActivity;
 import com.example.prototype.R;
 import com.example.prototype.SignQuestion;
+import com.example.prototype.WrongDialog;
 import com.squareup.picasso.Picasso;
 
 public class SignFragment extends Fragment implements View.OnClickListener {
@@ -101,7 +102,8 @@ public class SignFragment extends Fragment implements View.OnClickListener {
                 l.gotCorrect(s);
             } else {
                 //TODO if wrong.
-                Toast.makeText(getActivity(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                WrongDialog wrongDialog = new WrongDialog();
+                wrongDialog.show(getActivity().getSupportFragmentManager(), "wrong");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     mVibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
                 } else {
