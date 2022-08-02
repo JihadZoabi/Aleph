@@ -7,13 +7,12 @@
     </array>
     <array name="l1">
         <item>Sport</item>
-        <item>@array/q1</item>
-        <item>@array/q2</item>
-        <item>@array/q3</item>
-        <item>@array/q4</item>
-        <item>@array/q5</item>
-        <item>@array/q6</item>
-        <item>@array/q7</item>
+        <item>@array/l2q1</item>
+        <item>@array/l2q2</item>
+        <item>@array/l2q3</item>
+        <item>@array/l2q4</item>
+        <item>@array/l2q5</item>
+        <item>@array/l2q6</item>
     </array>
     <array name="l3">
         <item>Food</item>
@@ -22,85 +21,88 @@
         <item>@array/l3q3</item>
         <item>@array/l3q4</item>
         <item>@array/l3q5</item>
+        <item>@array/l3q6</item>
      </array>
     <array name="l4">
         <item>Transport</item>
         <item>@array/l4q1</item>
         <item>@array/l4q2</item>
+        <item>@array/l4q3</item>
     </array>
-    <array name="q1">
+    <array name="l2q1">
         <item>LearnPhrase</item>
-        <item>يسبح</item>
-        <item>2</item>
-        <item>0</item>
-        <item>https://i.imgur.com/NCYI6kq.png</item>
-        <item>ليسخوت</item>
-        <item>לשחות</item>
-    </array>
-    <array name="q2">
-        <item>LearnPhrase</item>
-        <item>يركض</item>
+        <item>صباح الخير</item>
         <!-- Up is the meaning in Arabic-->
         <item>2</item>
         <!--        Up is XP -->
         <item>0</item>
         <!--  Up is correctIndex      -->
-        <item>https://i.imgur.com/a8n8AyZ.png</item>
-        <item>لاروتس</item>
+        <item>https://i.imgur.com/Zp0CZ8X.png</item>
+        <item>بوكر توف</item>
         <!--       Up is Hebrew word written in Arabic-->
-        <item>לרוץ</item>
-    </array>
-    <array name="q3">
-        <item>FourPictures</item>
-        <item>لاروتس</item>
-        <item>0</item>
-        <item>1</item>
-        <item>https://i.imgur.com/a8n8AyZ.png</item>
-        <item>https://i.imgur.com/JyD21qv.png</item>
-        <item>https://i.imgur.com/2xOG6sq.png</item>
-        <item>https://i.imgur.com/xBt1tqV.png</item>
-    </array>
-    <array name="q4">
-        <item>MultipleChoice</item>
-        <item>How do you say يركض</item>
-        <item>1</item>
-        <item>0</item>
-        <item>لاروتس</item>
-        <item>ليساخيك</item>
-        <item>لسخوت</item>
-    </array>
-    <array name="q5">
-        <item>LearnPhrase</item>
-        <item>يركض</item>
-        <!-- Up is the meaning in Arabic-->
-        <item>2</item>
-<!--        Up is XP -->
-        <item>0</item>
-<!--  Up is correctIndex      -->
-        <item>https://i.imgur.com/a8n8AyZ.png</item>
-        <item>لاروتس</item>
-<!--       Up is Hebrew word written in Arabic-->
-        <item>לרוץ</item>
+        <item>בוקר טוב</item>
         <!-- Up is Hebrew word written in Hebrew -->
     </array>
-    <array name="q6">
-        <item>MultipleChoice</item>
-        <item>معنى كلمة لاروتس</item>
-        <item>3</item>
+    <array name="l2q2">
+        <item>LearnPhrase</item>
+        <item>مرحبا</item>
+        <!-- Up is the meaning in Arabic-->
         <item>2</item>
-        <item>يرقص</item>
-        <item>يسبح</item>
-        <item>يركض</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/UWmzCRZ.png</item>
+        <item>شالوم</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>שלום</item>
+        <!-- Up is Hebrew word written in Hebrew -->
     </array>
-    <array name = "q7">
-        <item>FourPictures</item>
-        <item>لسخوت</item>
+
+    <array name="l2q3">
+        <item>LearnPhrase</item>
+        <item>تصبحوا على خير</item>
+        <!-- Up is the meaning in Arabic-->
         <item>2</item>
-        <item>3</item>
-        <item>https://i.imgur.com/rgUlQXL.png</item>
-        <item>https://i.imgur.com/JyD21qv.png</item>
-        <item>https://i.imgur.com/NCYI6kq.png</item>
-        <item>https://i.imgur.com/s7OHbfD.png</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/EDR3UsU.png</item>
+        <item>ليلى توف</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>לילה טוב</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="l2q4">
+        <item>LearnPhrase</item>
+        <item>الى اللقاء</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/fHa3rgj.png</item>
+        <item>لهيترؤوت</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>להתראות</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+    <array name="l2q5">
+        <item>MultipleChoice</item>
+        <item>معنى لفظ بوكر توف بالعربي</item>
+        <item>2</item>
+        <item>0</item>
+        <item>صباح الخير</item>
+        <item>مع السلامة</item>
+        <item>تصبحوا على خير</item>
+    </array>
+    <array name="l2q6">
+        <item>MultipleChoice</item>
+        <item>معنى لفظ مرحبا بالعبري</item>
+        <item>2</item>
+        <item>1</item>
+        <item>بوكر توف</item>
+        <item>شالوم</item>
+        <item>ما نيشمع</item>
     </array>
     <array name="l3q1">
         <item>LearnPhrase</item>
@@ -164,6 +166,16 @@
         <item>لهيترؤوت</item>
         <item>مسعادا</item>
     </array>
+    <array name="l3q6">
+        <item>FourPictures</item>
+        <item>اضغط على الصحن</item>
+        <item>1</item>
+        <item>1</item>
+        <item>https://i.imgur.com/tJJVmcZ.png</item>
+        <item>https://i.imgur.com/n6hV4Ki.png</item>
+        <item>https://i.imgur.com/2xOG6sq.png</item>
+        <item>https://i.imgur.com/46ElZwD.png</item>
+    </array>
 
     <array name="l4q1">
         <item>SignQuestion</item>
@@ -178,6 +190,21 @@
     </array>
 
     <array name="l4q2">
+        <item>LearnPhrase</item>
+        <item>باص (حافلة)</item>
+        <!-- Up is the meaning in Arabic-->
+        <item>2</item>
+        <!--        Up is XP -->
+        <item>0</item>
+        <!--  Up is correctIndex      -->
+        <item>https://i.imgur.com/SXmFG7v.png</item>
+        <item>اوتوبوس</item>
+        <!--       Up is Hebrew word written in Arabic-->
+        <item>אוטובוס</item>
+        <!-- Up is Hebrew word written in Hebrew -->
+    </array>
+
+    <array name="l4q3">
         <item>SignQuestion</item>
         <item>الى اين تشير اللافتة</item>
         <item>https://i.imgur.com/WQIpmZe.jpg</item>

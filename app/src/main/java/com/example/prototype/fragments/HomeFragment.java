@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        schoolRect.setOnClickListener(new View.OnClickListener() {
+        transportRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), LessonActivity.class);
@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        transportRect.setOnClickListener(new View.OnClickListener() {
+        schoolRect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), StoryActivity.class);
